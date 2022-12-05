@@ -3,7 +3,7 @@
     "path": "~/R/jabber-jazz-content-notes/index.qmd",
     "project_path": "index.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "909090548",
     "contents": "",
     "dirty": false,
     "created": 1670271134903.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "1,36",
+        "cursorPosition": "6,19",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1670276552,
+    "lastKnownWriteTime": 1670278809,
     "encoding": "ISO8859-1",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1670276552340,
+    "last_content_update": 1670278809789,
     "read_only": false,
     "read_only_alternatives": []
 }
