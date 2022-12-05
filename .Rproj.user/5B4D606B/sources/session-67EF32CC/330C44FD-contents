@@ -1,0 +1,406 @@
+---
+title: "Draft Preview #1 with Josh | Podcast"
+author: "Adam Bushman"
+date: "2022-12-08"
+categories: [2023-24, draft, preview]
+image: "scenario-4-02.jpg"
+---
+
+Today we're joined by Josh Roberts to take our first look ahead to the 2023 NBA Draft. We review his big board and tackle some of the interesting wrinkles thus far.
+
+## Intro
+
+Welcome to Jabber Jazz | Fan-driven, Ad-free content on Utah Jazz basketball
+
+Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
+
+Today:
+
+*   What's the 2023 NBA draft looking like for the Utah Jazz?
+
+Guest:
+
+*   Josh Roberts [@jayjazz3](https://twitter.com/jayjazz3)
+    -   Staple of Jazz Twitter
+    -   Big college basketball fan
+
+Like what we're doing? Consider...
+
+*   Subscribing
+*   Following
+*   Leaving a review or comment
+*   Snagging some merch
+
+Let's Jabber Jazz!
+
+
+## What's the 2023 NBA draft looking like for the Utah Jazz?
+
+2023 draft is unique:
+
+*   Generational talent
+*   Deep star player pool
+*   Wide group of potential contributors
+
+Speaking for myself, I always get started on draft stuff far too late. 
+
+Josh, however, is keeping a steady pulse so we're going to digest his 1st round big board.
+
+```{r}
+#| echo: false
+
+josh_tiers <- tibble::tibble(
+  pick = seq(1, 30), 
+  tier = c(
+    rep("Tier #1 - Best Player in the League", 1), 
+    rep("Tier #2 - All-NBA Potential", 7), 
+    rep("Tier #3 - All-Star Potential", 8), 
+    rep("Tier #4 - Starter/Rotation Potential", 14)
+  ), 
+  name = c(
+    "Victor Wembanyama", "Scoot Henderson", "Amen Thompson", "Cam Whitmore", 
+    "Ausar Thompson", "Nick Smith Jr.", "Brandon Miller", "Anthony Black", 
+    "Jarace Walker", "GG Jackson", "Cason Wallace", "Jett Howard", 
+    "Kyle Filipowski", "Gradey Dick", "Kris Murray", "Keyonte George", 
+    "Dariq Whitehead", "Jordan Walsh", "Leonard Miller", "Marcus Sasser", 
+    "Kel'el Ware", "Terrance Arceneaux", "Jalen Hood-Schifino", "Dillon Mitchell", 
+    "Tyrese Hunter", "Colby Jones", "Terquavion Smith", "Amari Bailey", 
+    "Javian McCollum", "Dereck Lively II"
+  ), 
+  off_position = paste(
+    "Off:", 
+    c(
+      "Wing", "Guard", "Guard", "Wing", 
+      "Wing", "Guard", "Wing", "?", 
+      "?", "Wing", "Guard", "Wing", 
+      "Big", "Wing", "?", "Guard", 
+      "?", "Wing", "?", "Guard", 
+      "Big", "?", "Guard", "Wing", 
+      "Guard", "Guard", "Guard", "Guard", 
+      "Guard", "Big"
+      )
+  ),
+  def_position = paste(
+    "Def:", 
+    c(
+      "Big", "Guard", "Wing", "Wing", 
+      "Wing", "Guard", "Wing", "?", 
+      "?", "Wing", "Guard", "Wing", 
+      "Big", "?", "?", "Guard", 
+      "?", "?", "?", "Guard", 
+      "Big", "?", "?", "?", 
+      "Guard", "?", "?", "?", 
+      "Guard", "Big"
+    )
+  ),
+  club = c(
+    "Metropolitans 92", "G League Ignite", "Overtime Elite", "Villanova", 
+    "Overtime Elite", "Arkansas", "Alabama", "Arkansas", "Houston", 
+    "South Carolina", "Kentucky", "Michigan", "Duke", "Kansas", "Iowa", 
+    "Baylor", "Duke", "Arkansas", "G League Ignite", "Houston", "Oregon", 
+    "Houston", "Indiana", "Texas", "Texas", "Xavier", "NC State", "UCLA", "Siena", 
+    "Duke"
+  ), 
+  height = c(paste(
+    c(7, 6, 6, 6, 
+      6, 6, 6, 6, 
+      6, 6, 6, 6, 
+      6, 6, 6, 6, 
+      6, 6, 6, 6, 
+      7, 6, 6, 6, 
+      6, 6, 6, 6, 
+      6, 7), 
+    rep("'", 30), 
+    c(2, 2, 7, 7, 
+      7, 5, 9, 7, 
+      8, 9, 4, 7, 
+      11, 7, 8, 4, 
+      6, 7, 10, 2, 
+      0, 5, 6, 7, 
+      0, 6, 4, 4, 
+      1, 1), 
+    rep("\"", 30), 
+    sep = ""
+  )), 
+  weight = paste(
+    c(229, 195, 202, 225, 
+      207, 185, 200, 195, 
+      220, 215, 185, 220, 
+      220, 195, 225, 185, 
+      190, 200, 211, 195, 
+      223, 195, 213, 200, 
+      180, 207, 165, 190, 
+      170, 215), 
+    rep("lbs", 30)
+  ), 
+  age = paste(
+    c(18.9, 18.8, 19.8, 18.4, 
+      19.8, 18.6, 20.1, 18.9, 
+      19.2, 17.9, 19.1, 19.2, 
+      19.1, 19.1, 22.3, 19.1, 
+      18.3, 18.7, 19.1, 22.2, 
+      18.6, 19.6, 19.4, 19.2, 
+      19.3, 20.5, 19.9, 18.8, 
+      19.5, 18.8), 
+    rep("yrs", 30)
+  )
+)
+
+```
+
+### Tier 1
+
+Single prospect: Victor Wembanyama
+
+Generational talent, best player in the league potential
+
+Questions:
+
+*   Explain why Victor fits this potential for you?
+
+```{r}
+#| echo: false
+
+josh_tiers |>
+  dplyr::filter(stringr::str_sub(tier, 1, 7) == "Tier #1") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+  gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+  gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Josh's Big Board", 
+    subtitle = "2023 NBA Draft | As of Dec 1st, 2022"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Josh Roberts | Twitter: @jayjazz3") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  ) 
+
+```
+
+
+### Tier 2
+
+Questions:
+
+*   Instead of positions/needs, what styles are you looking for?
+*   Opportunity with Ausar? Usually 3-5 pick gap?
+*   Are you up on anyone moving up a tier?
+*   Are you down on anyone to where they could slip a tier?
+*   Anyone else you want to mention?
+*   Potential for Jazz to have 1 pick here
+    -   Assume pick 6-8: who are you going with?
+
+```{r}
+#| echo: false
+
+josh_tiers |>
+  dplyr::filter(stringr::str_sub(tier, 1, 7) == "Tier #2") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+    gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+    gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Josh's Big Board", 
+    subtitle = "2023 NBA Draft | As of Dec 1st, 2022"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Josh Roberts | Twitter: @jayjazz3") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  ) 
+
+```
+
+
+### Tier 3
+
+Questions:
+
+*   You're high on GG Jackson and he's impressing; realistically does he stay out of the top 10?
+*   What has you concerned on Keyonte George?
+*   Handful of bigs: Kilipowski, Ware, Lively: higher on any more than Kessler?
+*   Are you up on anyone moving up a tier?
+*   Are you down on anyone to where they could slip a tier?
+*   Anyone else you want to mention?
+*   Potential for Jazz to have 2 picks here
+    -   Who are you going with?
+
+```{r}
+#| echo: false
+
+josh_tiers |>
+  dplyr::filter(stringr::str_sub(tier, 1, 7) == "Tier #3") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+    gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+    gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Josh's Big Board", 
+    subtitle = "2023 NBA Draft | As of Dec 1st, 2022"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Josh Roberts | Twitter: @jayjazz3") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  ) 
+
+```
+
+
+### Tier 4
+
+Questions:
+
+*   Is there reason to jump tiers?
+    -   Say give up your #19 and #26 picks and Gay's expiring for a bigger, long salary and #14 to get Gradey Dick
+    -   Worth it?
+*   Lots of small guards here: Sasser, Hunter, McCollum
+    -   Any reservations with size?
+*   Only 30; is tier #4 larger if you include 2nd round?
+*   Are you up on anyone moving up a tier?
+*   Are you down on anyone to where they could slip a tier?
+*   Anyone else you want to mention?
+*   Potential for Jazz to have 1 pick here
+    -   Assume pick 17-19: who are you going with?
+    -   Assume pick 25-30: who are you going with?
+
+```{r}
+#| echo: false
+
+josh_tiers |>
+  dplyr::filter(stringr::str_sub(tier, 1, 7) == "Tier #4") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+    gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+    gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Josh's Big Board", 
+    subtitle = "2023 NBA Draft | As of Dec 1st, 2022"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Josh Roberts | Twitter: @jayjazz3") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  ) 
+
+```
+
+### This Season
+
+Thoughts on this season?
+
+*   The young guys
+*   Who's part of the future
+*   How does the team lean going forward?
+
+## Close
+
+Thanks for listening!
+
+Like what we're doing? Here's how you can support
+
+*   Subscribe
+    -   [Podcast](https://linktr.ee/jabberjazz)
+    -   [Twitter | @Jabber_Jazz](https://twitter.com/Jabber_Jazz)
+    -   [YouTube](https://www.youtube.com/jabberjazz)
+*   Leave a review
+*   Score some Jabber Jazz merch
+    -   [Store](https://jabber-jazz.myspreadshop.com/)

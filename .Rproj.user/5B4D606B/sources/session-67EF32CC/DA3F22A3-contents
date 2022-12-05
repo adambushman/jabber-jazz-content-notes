@@ -1,0 +1,9 @@
+library('tidyverse')
+library('readxl')
+
+
+data <- readxl::read_xlsx('C:/Users/Adam Bushman/Documents/custGroups.xlsx', sheet = 'group-data')
+
+data |>
+  tidyr::pivot_wider(names_from = mark, values_from = c(currentGroups, newGroups)) |>
+  write.csv('C:/Users/Adam Bushman/Documents/pivotted')

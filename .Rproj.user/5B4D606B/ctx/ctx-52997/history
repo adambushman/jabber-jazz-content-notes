@@ -1,0 +1,512 @@
+its = c('178R', '188R', '188L', '1176R', '1176L', '1174R', '1174L', '100R', '100L', '101R', '101L', '102R', '102L')
+#its = c('129R', '150L', '115R', '115L', '151R', '151L', '103R', '103L', '113R', '113L', '139R', '139L')
+#its = c('1057R', '1056L', '1058R', '1058L', '1060R', '1060L', '1062R', '1062L', '1120')
+#its = c('1015R', '1014L', '1051L', '109', '110', '111', '111O', '111T', '1064', '1077')
+#Evergreen
+#its = c('1015R', '1014L', '1051L', '109', '110', '111', '111O', '111T', '1064', '1077')
+antSubbed = antDotDF %>% filter(itemNumber %in% its)
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#39FF14', '#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '-1.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+# FOR MASSIVE FAMILIES
+#fams = antDotDF %>% filter(line == highlight) %>% select(itemNumber)
+#Celsius
+#its = c('178R', '188R', '188L', '1176R', '1176L', '1174R', '1174L', '100R', '100L', '101R', '101L', '102R', '102L')
+its = c('129R', '150L', '115R', '115L', '151R', '151L', '103R', '103L', '113R', '113L', '139R', '139L')
+#its = c('1057R', '1056L', '1058R', '1058L', '1060R', '1060L', '1062R', '1062L', '1120')
+#its = c('1015R', '1014L', '1051L', '109', '110', '111', '111O', '111T', '1064', '1077')
+#Evergreen
+#its = c('1015R', '1014L', '1051L', '109', '110', '111', '111O', '111T', '1064', '1077')
+antSubbed = antDotDF %>% filter(itemNumber %in% its)
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#39FF14', '#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '-2.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+highlight = 'Rock'
+antSubbed = antDotDF %>% filter(line == highlight)
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#39FF14', '#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '-2.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+highlight = 'Talus'
+antSubbed = antDotDF %>% filter(line == highlight)
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#39FF14', '#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+highlight = 'Mt. Adventure'
+antSubbed = antDotDF %>% filter(line == highlight)
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#39FF14', '#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+highlight = 'Grand'
+antSubbed = antDotDF %>% filter(line == highlight)
+ggplot(antSubbed, aes(weeksAdj, itemNumber, label = location)) +
+geom_vline(xintercept = 0, aes(color = "gray")) +
+geom_point(aes(color = ifelse(weeksAdj < -4, 'Too Low', ifelse(weeksAdj > 4, 'Too High', 'Just Right')),
+size = `inventory`)) +
+scale_color_manual(values = c('#39FF14', '#0310ea', '#ff45d0')) +
+geom_text_repel(data = subset(antSubbed, weeksAdj < -4 | weeksAdj > 4),
+box.padding = 0.5,
+max.overlaps = Inf) +
+labs(size = "Inventory Levels",
+colour = "Concern",
+x = "Adjusted Weeks on Hand of Inventory",
+y = "Item Number",
+title = "Inventory Levels by Concern",
+subtitle = paste(highlight, "Families | Old")) +
+theme_minimal() +
+theme(plot.title = element_text(hjust = 0.5),
+plot.subtitle = element_text(hjust = 0.5),
+plot.background = element_rect(fill = "#FFFFFF", color = NA))
+ggsave(filename = paste('C:/Users/Adam Bushman/Documents/run-out-viz/dot', highlight, '.jpeg', sep = ''),
+units = 'px', height = 500, width = 800, dpi = 96)
+team_name = 'Phoenix Suns'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(season, "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+)
+team_shooting_table
+team_name = 'Utah Jazz'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(season, "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+)
+team_shooting_table
+=25/134
+25/134
+40/171
+50/171
+team_shooting_table
+team_shooting_table %>%
+gtsave(
+paste(
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+path = "C:/Users/Adam Bushman/Pictures",
+expand = 20
+)
+team_name = 'Detroit Pistons'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(season, "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+)
+team_shooting_table
+team_shooting_table %>%
+gtsave(
+paste(
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+path = "C:/Users/Adam Bushman/Pictures",
+expand = 20
+)

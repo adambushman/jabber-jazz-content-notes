@@ -1,0 +1,512 @@
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+) %>%
+gtsave(
+paste(
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+expand = 0
+)
+team_shooting_table %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(unique(team_shooting_table$slugSeason), "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+) %>%
+gtsave(
+paste(
+"C:/Users/Adam Bushman/Pictures",
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+expand = 0
+)
+team_shooting_table %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(unique(team_shooting_table$slugSeason), "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+) # %>%
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(unique(team_shooting_table$slugSeason), "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+) # %>%
+team_shooting_table
+team_name = 'Portland Trailblazers'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+)
+team_name = 'Portland Trail Blazers'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_name = 'Portland Trailblazers'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(unique(team_shooting_table$slugSeason), "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+) # %>%
+team_shooting_table
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble()
+unique(team_shooting_table$nameTeam)
+team_name = 'Portland Trail Blazers'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(unique(team_shooting_table$slugSeason), "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+) # %>%
+team_shooting_table
+team_shooting_table %>%
+gtsave(
+paste(
+"C:/Users/Adam Bushman/Pictures",
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+expand = 0
+)
+team_shooting_table %>%
+gtsave(
+paste(
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+path = "C:/Users/Adam Bushman/Pictures",
+expand = 0
+)
+gc()

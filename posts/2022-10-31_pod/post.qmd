@@ -1,0 +1,111 @@
+---
+title: "A Surprising Start for the Jazz | Podcast"
+author: "Adam Bushman"
+date: "2022-10-31"
+categories: [2022-23, season, surprises, observations, stats]
+image: "lauri.jpg"
+---
+
+Today we break down a wild start for the Utah Jazz and highlight specific items that contribute to the surprising start. We turn from macro to micro by identifying a stat for each rotation member that encapsulates the start.
+
+## Intro
+
+Welcome to Jabber Jazz | Fan-driven, Ad-free content on Utah Jazz basketball
+
+Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
+
+Today:
+
+*   Surprises thus far
+*   Interesting stat from key rotation members
+
+
+Like what we're doing? Consider...
+
+*   Subscribing
+*   Following
+*   Leaving a review or comment
+*   Snagging some merch
+
+
+## Surprises thus far
+
+*   Chemistry of the team
+    -   Returning faces from last year's rotation: Conley, Clarkson, Gay
+    -   Returning coaching staff: Jensen, Skeeter
+    -   Given such turnover, didn't expect to see such cohesion
+        *   Top 5 in assists
+        *   13th in defense (CTG)
+        *   #6 in clutch NRTG (min 10 total minutes)
+*   Shooting performance
+    -   Despite shooting talent, we've seen REALLY good luck
+        *   Only 1 game where UTA 3PAs where fewer than their opponent
+        *   Only 2 games where UTA 3P% was less than their opponent
+    -   Without that kind of luck, we're looking more at a more realistic 3-4 record
+*   "On the Same Page"
+    -   #6 in smart shot freq advantage
+    -   They've discovered some hierarchy and roles
+            
+## Interesting stats from key rotation members
+
+Disclaimer: super small size theater
+
+We'll try to stay away from inherently flawed stats as well
+
+*   Lauri Markkanen
+    -   Adjusted TSA/gm: +9.8 (last year +3.4)
+    -   Adjusted TS%: -0.1% (last year +1.6%)
+    -   Similar efficiency on increased volume? Heck yeah!
+        *   27% on 3's while previous 1000 attempts resulted in 37%
+*   Mike Conley
+    -   Seems far more active defensively
+        *   STL per 36: 1.6 (last year 1.7)
+        *   DEFLECtIONS per 36: 2.4 (last year 2.6)
+*   Jordan Clarkson
+    -   Really prone to pass this season; has his eyes out and looking to playmake
+    -   Potential assists per 36: 9.9 (last year 5.7)
+*   Kelly Olynyk
+    -   Putting together a similar start as he did in HOU, his best stretch ever
+        *   HOU: 21.7 pts, 9.6 rbs, 4.7 ast, +10.2% per 75 poss
+        *   UTA: 17.5 pts, 5.3 rbs, 4.7 ast, +13.8% per 75 poss
+*   Malik Beasley
+    -   Malik hit that game sealing 3 against Memphis but...
+        *   Efficiency: 35.5% on C&S (down from 38.1%)
+        *   Volume: 44.9% of shots as C&S3 (down from 60.4% last year)
+*   Jarred Vanderbilt
+    -   6.4 fouls per 75 possessions; leading the league (min 100 minutes played)
+    -   Fouled out of 2 games this year; 3 games where playing time seriously affected
+    -   Has to get that under control (last two games have been better: 2 & 3 fouls respectively)
+*   Collin Sexton
+    -   Big question: where is he realtive to 20-21?
+        *   He's not there from a volume/role standpoint
+    -   But what about rates?
+        *   CLE: 25.5 pts, 3.3 rbs, 4.6 ast, +0.1% per 75 poss
+        *   UTA: 22.9 pts, 5.4 rbs, 3.5 ast, +3.1% per 75 poss
+*   Rudy Gay
+    -   Much was made of Gay being unhappy last year
+        *   But it appears his attitude is improving despite...
+            -   USG: 16.5 (down from 19.3 last year)
+            -   Min/gm: 16.8 (down from 18.9 last year)
+*   Talen Horton-Tucker
+    -   Rough, rough efficiency thus far: -12.5 rTS%
+        *   Not a ton of reasons his game should ever translate to league average efficiency
+*   Walker Kessler
+    -   Creating significant issues for defenses at the rim
+        *   Opponent Rim Freq: 32% w/o Kessler (38% w/)
+        *   Opponent Rim FG%: 64% w/o Kessler (52% w/)
+
+
+## Close
+
+Thanks for listening!
+
+Like what we're doing? Here's how you can support
+
+*   Subscribe
+    -   [Podcast](https://linktr.ee/jabberjazz)
+    -   [Twitter | @Jabber_Jazz](https://twitter.com/Jabber_Jazz)
+    -   [YouTube](https://www.youtube.com/jabberjazz)
+*   Leave a review
+*   Score some Jabber Jazz merch
+    -   [Store](https://jabber-jazz.myspreadshop.com/)

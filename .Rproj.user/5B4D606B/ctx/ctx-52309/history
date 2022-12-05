@@ -1,0 +1,512 @@
+shootingData <-
+nbastatR::game_logs(
+seasons = c(2023),
+season_types = "Regular Season",
+result_types = "team"
+) %>%
+as_tibble() %>%
+group_by(yearSeason, nameTeam) %>%
+summarise(
+fgPerc = sum(fgmTeam) / sum(fgaTeam),
+efgPerc = (sum(fgmTeam) + (0.5 * sum(fg3mTeam))) / sum(fgaTeam),
+tsPerc = sum(ptsTeam) / ((sum(fgaTeam) + (0.44 * sum(ftaTeam))) * 2),
+.groups = "drop"
+) %>%
+pivot_longer(cols = -c(yearSeason, nameTeam), names_to = "metric", values_to = "value")
+shootingData <-
+nbastatR::game_logs(
+seasons = c(2022),
+season_types = "Regular Season",
+result_types = "team"
+) %>%
+as_tibble() %>%
+group_by(yearSeason, nameTeam) %>%
+summarise(
+fgPerc = sum(fgmTeam) / sum(fgaTeam),
+efgPerc = (sum(fgmTeam) + (0.5 * sum(fg3mTeam))) / sum(fgaTeam),
+tsPerc = sum(ptsTeam) / ((sum(fgaTeam) + (0.44 * sum(ftaTeam))) * 2),
+.groups = "drop"
+) %>%
+pivot_longer(cols = -c(yearSeason, nameTeam), names_to = "metric", values_to = "value")
+matchups
+library('combinat')
+matchups = combinat::combn(
+c("USA", "ENG", "IRA", "WAL"),
+2
+)
+matchups
+results = matrix(
+c(NA, NA, NA, NA, 1, 1, 6, 1, NA, NA, 2, 0),
+nrow = 2,
+ncol = 6
+)
+printTable <- function(matchups, results) {
+tabl <- data.frame(matrix(nrow = 0, ncol = 4))
+colnames(tabl) = c("team", "points", "margin", "goals")
+for(c in 1:6) { # Each matchup
+if(!is.na(results[1,c])) {
+for(r in 1:2) {
+mar = results[r,c] - results[ifelse(r==1,2,1),c]
+if(mar == 0) {
+pts = 1
+}
+else if(mar > 0) {
+pts = 3
+}
+else {
+pts = 0
+}
+tabl[nrow(tabl)+1,] = c(matchups[r,c], pts, mar, results[r,c])
+}
+}
+}
+tabl |>
+dplyr::mutate(
+points = as.integer(points),
+margin = as.integer(margin),
+goals = as.integer(goals)
+) |>
+dplyr::group_by(team) |>
+dplyr::summarise(
+totPoints = sum(points),
+totMargin = sum(margin),
+totGoals = sum(goals)
+) |>
+dplyr::arrange(
+desc(totPoints),
+desc(totMargin),
+desc(totGoals)
+)
+}
+printTable(matchups, results)
+testTable <- function(matchups, results) {
+tabl <- data.frame(matrix(nrow = 0, ncol = 4))
+colnames(tabl) = c("team", "points", "margin", "goals")
+for(c in 1:6) { # Each matchup
+if(!is.na(results[1,c])) {
+for(r in 1:2) {
+mar = results[r,c] - results[ifelse(r==1,2,1),c]
+if(mar == 0) {
+pts = 1
+}
+else if(mar > 0) {
+pts = 3
+}
+else {
+pts = 0
+}
+tabl[nrow(tabl)+1,] = c(matchups[r,c], pts, mar, results[r,c])
+}
+}
+}
+order <-
+tabl |>
+dplyr::mutate(
+points = as.integer(points),
+margin = as.integer(margin),
+goals = as.integer(goals)
+) |>
+dplyr::group_by(team) |>
+dplyr::summarise(
+totPoints = sum(points),
+totMargin = sum(margin),
+totGoals = sum(goals)
+) |>
+dplyr::arrange(
+desc(totPoints),
+desc(totMargin),
+desc(totGoals)
+)
+return(c(
+ifelse(which(order == "USA") < 3, 1, 0),
+ifelse(results[1,1] == results[2,1], "Tie", ifelse(results[1,1] > results[2,1], "Win", "Lose")), #USA
+ifelse(results[1,6] == results[2,6], "Tie", ifelse(results[1,6] > results[2,6], "Win", "Lose")) #Iran
+))
+}
+results
+matchups
+testTable <- function(matchups, results) {
+tabl <- data.frame(matrix(nrow = 0, ncol = 4))
+colnames(tabl) = c("team", "points", "margin", "goals")
+for(c in 1:6) { # Each matchup
+if(!is.na(results[1,c])) {
+for(r in 1:2) {
+mar = results[r,c] - results[ifelse(r==1,2,1),c]
+if(mar == 0) {
+pts = 1
+}
+else if(mar > 0) {
+pts = 3
+}
+else {
+pts = 0
+}
+tabl[nrow(tabl)+1,] = c(matchups[r,c], pts, mar, results[r,c])
+}
+}
+}
+order <-
+tabl |>
+dplyr::mutate(
+points = as.integer(points),
+margin = as.integer(margin),
+goals = as.integer(goals)
+) |>
+dplyr::group_by(team) |>
+dplyr::summarise(
+totPoints = sum(points),
+totMargin = sum(margin),
+totGoals = sum(goals)
+) |>
+dplyr::arrange(
+desc(totPoints),
+desc(totMargin),
+desc(totGoals)
+)
+return(c(
+ifelse(which(order == "USA") < 3, 1, 0),
+ifelse(results[1,1] == results[2,1], "Tie", ifelse(results[1,1] > results[2,1], "Win", "Lose")), #USA-ENG
+ifelse(results[1,2] == results[2,2], "Tie", ifelse(results[1,2] > results[2,2], "Win", "Lose")) #USA-IRA
+))
+}
+scenarios = data.frame(matrix(nrow = 0, ncol = 3))
+colnames(scenarios) = c("advance", "resultENG", "resultIRA")
+for(i in 1:1000) {
+results = matrix(
+replace(
+c(NA, NA, NA, NA, 1, 1, 6, 1, NA, NA, NA, NA),
+is.na(c(NA, NA, NA, NA, 1, 1, 6, 1, NA, NA, 2, 0)) == TRUE,
+floor(rexp(6, 1/2))
+),
+nrow = 2,
+ncol = 6
+)
+scenarios[nrow(scenarios)+1,] = testTable(matchups, results)
+}
+a <- chisq.test(scenarios$advance, scenarios$resultUSA)
+a <- chisq.test(scenarios$advance, scenarios$resultENG)
+a$observed
+adv <- scenarios |> filter(advance == 1)
+b <- chisq.test(adv$resultENG, adv$resultIRA)
+adv
+adv <- scenarios |> filter(advance == 1)
+adv <- scenarios |> dplyr::filter(advance == 1)
+b <- chisq.test(adv$resultENG, adv$resultIRA)
+b$observed
+testTable <- function(matchups, results) {
+tabl <- data.frame(matrix(nrow = 0, ncol = 4))
+colnames(tabl) = c("team", "points", "margin", "goals")
+for(c in 1:6) { # Each matchup
+if(!is.na(results[1,c])) {
+for(r in 1:2) {
+mar = results[r,c] - results[ifelse(r==1,2,1),c]
+if(mar == 0) {
+pts = 1
+}
+else if(mar > 0) {
+pts = 3
+}
+else {
+pts = 0
+}
+tabl[nrow(tabl)+1,] = c(matchups[r,c], pts, mar, results[r,c])
+}
+}
+}
+order <-
+tabl |>
+dplyr::mutate(
+points = as.integer(points),
+margin = as.integer(margin),
+goals = as.integer(goals)
+) |>
+dplyr::group_by(team) |>
+dplyr::summarise(
+totPoints = sum(points),
+totMargin = sum(margin),
+totGoals = sum(goals)
+) |>
+dplyr::arrange(
+desc(totPoints),
+desc(totMargin),
+desc(totGoals)
+)
+return(c(
+ifelse(which(order == "USA") < 3, 1, 0),
+ifelse(results[1,1] == results[2,1], "Tie", ifelse(results[1,1] > results[2,1], "Win", "Lose")), #USA-ENG
+ifelse(results[1,2] == results[2,2], "Tie", ifelse(results[1,2] > results[2,2], "Win", "Lose")), #USA-IRA
+ifelse(results[1,5] == results[2,5], "Tie", ifelse(results[1,5] > results[2,5], "Win", "Lose")) #ENG-WAL
+))
+}
+scenarios = data.frame(matrix(nrow = 0, ncol = 3))
+colnames(scenarios) = c("advance", "resultENG", "resultIRA")
+for(i in 1:1000) {
+results = matrix(
+replace(
+c(NA, NA, NA, NA, 1, 1, 6, 1, NA, NA, NA, NA),
+is.na(c(NA, NA, NA, NA, 1, 1, 6, 1, NA, NA, 2, 0)) == TRUE,
+floor(rexp(6, 1/2))
+),
+nrow = 2,
+ncol = 6
+)
+scenarios[nrow(scenarios)+1,] = testTable(matchups, results)
+}
+scenarios = data.frame(matrix(nrow = 0, ncol = 4))
+colnames(scenarios) = c("advance", "resultENG", "resultIRA", "resultENG_WAL")
+for(i in 1:1000) {
+results = matrix(
+replace(
+c(NA, NA, NA, NA, 1, 1, 6, 1, NA, NA, NA, NA),
+is.na(c(NA, NA, NA, NA, 1, 1, 6, 1, NA, NA, 2, 0)) == TRUE,
+floor(rexp(6, 1/2))
+),
+nrow = 2,
+ncol = 6
+)
+scenarios[nrow(scenarios)+1,] = testTable(matchups, results)
+}
+adv <- scenarios |> dplyr::filter(advance == 1)
+adv <- scenarios |> dplyr::filter(advance == 1 & resultENG == 'Lose')
+head(adv)
+b <- chisq.test(adv$resultENG, adv$resultIRA)
+b$observed
+b <- chisq.test(adv$resultENG_WAL, adv$resultIRA)
+b$observed
+gc()
+library('tidyverse')
+library('nbastatR')
+library('gt')
+library('gtExtras')
+Sys.setenv("VROOM_CONNECTION_SIZE" = 131072 * 2)
+team_name = 'Utah Jazz'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(season, "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+)
+team_shooting_table
+team_shooting_table %>%
+gtsave(
+paste(
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+path = "C:/Users/Adam Bushman/Pictures",
+expand = 20
+)
+team_name = 'Golden State Warriors'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+team_shooting_table <-
+nbastatR::game_logs(
+seasons = c(season),
+season_types = "Regular Season",
+result_types = "player"
+) %>%
+as_tibble() %>%
+mutate(
+laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(),
+laTsp = ((sum(pts) / n()) / (laTsa * 2)),
+tsa = fga + (0.44 * fta),
+tsp = pts / (tsa * 2)
+) %>%
+filter(nameTeam == team_name) %>%
+group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+summarise(
+gp = n(),
+TSAgm = round(sum(tsa) / n(), 1),
+TSp = round(sum(pts) / (sum(tsa) * 2), 3),
+.groups = 'drop'
+) %>%
+mutate(
+rTSAgm = TSAgm - laTsa,
+rTSp = TSp - laTsp
+) %>%
+arrange(desc(TSAgm), desc(rTSp)) %>%
+select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+gt() %>%
+tab_header(
+title = paste(team_name, "True Shooting Comparison"),
+subtitle = paste(season, "Season | Through", Sys.Date()-1)
+) %>%
+cols_align(
+.,
+align = "center",
+columns = c(gp, TSAgm, rTSp)
+) %>%
+cols_label(
+urlPlayerHeadshot = "",
+namePlayer = "Player Name",
+gp = "GP",
+TSAgm = "TSA/Game",
+rTSp = "Adj TS%"
+) %>%
+gt_img_rows(
+columns = urlPlayerHeadshot,
+height = 45
+) %>%
+fmt_percent(
+columns = rTSp,
+decimals = 1
+) %>%
+tab_style(
+style = gt::cell_text(color = "green3"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp > 0
+)
+) %>%
+tab_style(
+style = gt::cell_text(color = "red2"),
+locations = gt::cells_body(
+columns = rTSp,
+rows = rTSp < 0
+)
+) %>%
+tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+tab_footnote(
+footnote = "True Shooting Attempts",
+locations = cells_column_labels(columns = TSAgm)
+) %>%
+tab_footnote(
+footnote = "Efficiency adjusted to league average",
+locations = cells_column_labels(columns = rTSp)
+) %>%
+tab_options(
+heading.background.color = colors[2],
+column_labels.background.color = colors[1],
+column_labels.font.weight = "bold",
+footnotes.background.color = colors[1],
+source_notes.background.color = colors[2]
+)
+team_shooting_table
+team_shooting_table %>%
+gtsave(
+paste(
+stringr::str_replace_all(
+stringr::str_to_lower(team_name),
+" ",
+"-"
+),
+"_ts-comp.png",
+sep = ""
+),
+path = "C:/Users/Adam Bushman/Pictures",
+expand = 20
+)
+team_name = 'Utah Jazz'
+season = 2023
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+library('tidyverse')
+colors <-
+data.frame(
+read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+) %>%
+filter(team == team_name) %>%
+select(hex1, hex2) %>%
+unlist(., use.names = FALSE)
+unloadNamespace('tidyverse')
+colors

@@ -1,0 +1,26 @@
+library('rvest')
+library('tidyverse')
+
+url <- "https://basketball.realgm.com/nba/info/salary_cap"
+page = read_html(url)
+raw <- 
+  page %>% 
+  html_nodes('.basketball.compact') %>%
+  .[1] %>%
+  html_table() %>%
+  .[[1]]
+
+# Fix column names
+main = unlist(raw[1,], use.names = FALSE)[1:7]
+headers = c(rep("", 4), rep("mle", 3))
+
+fixed = janitor::make_clean_names(paste(main, headers, sep = "_"))
+
+
+# Repaired Table
+salaryCapHistory <- raw[2:nrow(raw), 3:9]
+colnames(salaryCapHistory) <- fixed
+
+
+# Check
+salaryCapHistory

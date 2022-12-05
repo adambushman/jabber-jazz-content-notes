@@ -1,0 +1,167 @@
+library('tidyverse')
+library('nbastatR')
+library('gt')
+library('gtExtras')
+
+
+Sys.setenv("VROOM_CONNECTION_SIZE" = 131072 * 2)
+
+team_name = 'Utah Jazz'
+season = 2023
+
+
+colors <-
+  data.frame(
+    read.csv("C:/Users/Adam Bushman/Dropbox (HFC)/Jabber Jazz Podcast/Stats/R-Lookup/teamhexcolors.csv")
+  ) %>%
+  filter(team == team_name) %>% 
+  select(hex1, hex2) %>%
+  unlist(., use.names = FALSE)
+  
+
+
+team_shooting_table <-
+  nbastatR::game_logs(
+    seasons = c(season), 
+    season_types = "Regular Season", 
+    result_types = "player"
+  ) %>%
+  as_tibble() %>%
+  mutate(
+    laTsa = (sum(fga) + (sum(fta) * 0.44)) / n(), 
+    laTsp = ((sum(pts) / n()) / (laTsa * 2)), 
+    tsa = fga + (0.44 * fta), 
+    tsp = pts / (tsa * 2)
+  ) %>%
+  filter(nameTeam == team_name) %>%
+  group_by(slugSeason, slugTeam, namePlayer, urlPlayerHeadshot, laTsa, laTsp) %>%
+  summarise(
+    gp = n(), 
+    TSAgm = round(sum(tsa) / n(), 1), 
+    TSp = round(sum(pts) / (sum(tsa) * 2), 3), 
+    .groups = 'drop'
+  ) %>%
+  mutate(
+    rTSAgm = TSAgm - laTsa, 
+    rTSp = TSp - laTsp
+  ) %>%
+  arrange(desc(TSAgm), desc(rTSp)) %>%
+  select(urlPlayerHeadshot, namePlayer, gp, TSAgm, rTSp) %>%
+  gt() %>%
+  tab_header(
+    title = paste(team_name, "True Shooting Comparison"), 
+    subtitle = paste(season, "Season | Through", Sys.Date()-1)
+  ) %>%
+  cols_align(
+    ., 
+    align = "center",
+    columns = c(gp, TSAgm, rTSp)
+  ) %>%
+  cols_label(
+    urlPlayerHeadshot = "", 
+    namePlayer = "Player Name", 
+    gp = "GP", 
+    TSAgm = "TSA/Game", 
+    rTSp = "Adj TS%"
+  ) %>%
+  gt_img_rows(
+    columns = urlPlayerHeadshot, 
+    height = 45
+  ) %>%
+  fmt_percent(
+    columns = rTSp, 
+    decimals = 1
+  ) %>% 
+  tab_style(
+    style = gt::cell_text(color = "green3"), 
+    locations = gt::cells_body(
+      columns = rTSp, 
+      rows = rTSp > 0
+    )
+  ) %>%
+  tab_style(
+    style = gt::cell_text(color = "red2"), 
+    locations = gt::cells_body(
+      columns = rTSp, 
+      rows = rTSp < 0
+    )
+  ) %>%
+  tab_source_note(source_note = "Data via nba.stats.com | Accessed via nbastatR package") %>%
+  tab_footnote(
+    footnote = "True Shooting Attempts",
+    locations = cells_column_labels(columns = TSAgm)
+  ) %>%
+  tab_footnote(
+    footnote = "Efficiency adjusted to league average",
+    locations = cells_column_labels(columns = rTSp)
+  ) %>%
+  tab_options(
+    heading.background.color = colors[2], 
+    column_labels.background.color = colors[1], 
+    column_labels.font.weight = "bold", 
+    footnotes.background.color = colors[1], 
+    source_notes.background.color = colors[2]
+  ) 
+
+team_shooting_table %>%
+  gtsave(
+    paste(
+      stringr::str_replace_all(
+        stringr::str_to_lower(team_name),
+        " ",
+        "-"
+      ),
+      "_ts-comp.png",
+      sep = ""
+    ),
+    path = "C:/Users/Adam Bushman/Pictures", 
+    expand = 20
+  )
+
+
+
+
+ggplot(
+  team_shooting_table, 
+  aes(
+    x = rTSAgm, y = rTSp, label = namePlayer
+  )
+) + 
+  geom_vline(
+    xintercept = 0, 
+    color = "#FFFFFF", alpha = 0.65, 
+    linetype = "dashed") +
+  geom_hline(
+    yintercept = 0, 
+    color = "#FFFFFF", alpha = 0.65, 
+    linetype = "dashed") +
+  geom_point(
+    color = updated$main
+  ) +
+  ggrepel::geom_text_repel(
+    color = updated$main, 
+    fontface = "bold"
+  ) +
+  labs(
+    title = "Adjusted True Shooting Comparison", 
+    subtitle = "2022-23 Season Results", 
+    x = "Adjusted TSA per Game", 
+    y = "Adjusted TS%"
+  ) +
+  theme_minimal() +
+  theme(
+    # Legend
+    legend.position = "none", 
+    
+    # Text
+    text = element_text(color = "#FFFFFF"),
+    plot.title = element_text(hjust = 0.5, face = "bold"), 
+    plot.subtitle = element_text(hjust = 0.5, face = "italic"), 
+    #axis.text = element_text(color = "#FFFFFF", size = 14), 
+    #axis.title = element_text(size = 18), 
+    
+    # Grid
+    panel.grid = element_line(color = "#585858"), 
+    panel.grid.major = element_line(size = 0.25), 
+    plot.background = element_rect(fill = "#050505", color = NA)
+  )
