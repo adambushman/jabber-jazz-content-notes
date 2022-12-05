@@ -1,7 +1,5 @@
 ---
 title: "Jabber Jazz | Content Notes"
-project:
-  output-dir: docs
 listing:
   contents: posts
   sort: "date desc"
