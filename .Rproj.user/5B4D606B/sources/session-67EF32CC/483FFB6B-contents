@@ -1,3 +1,0 @@
-sample(c("Yes", "No"), 30, replace = TRUE) |>
-  paste(collapse = "', '") |>
-  writeClipboard()

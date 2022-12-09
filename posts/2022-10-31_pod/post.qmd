@@ -3,7 +3,7 @@ title: "A Surprising Start for the Jazz | Podcast"
 author: "Adam Bushman"
 date: "2022-10-31"
 categories: [2022-23, season, surprises, observations, stats]
-image: "lauri.jpg"
+image: "thumbnail.jpg"
 ---
 
 Today we break down a wild start for the Utah Jazz and highlight specific items that contribute to the surprising start. We turn from macro to micro by identifying a stat for each rotation member that encapsulates the start.
