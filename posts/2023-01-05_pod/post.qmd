@@ -1,0 +1,183 @@
+---
+title: "Draft Preview #1 with Josh | Podcast"
+description: "Today we're joined by Josh Roberts to take our first look ahead to the 2023 NBA Draft. We review his big board and tackle some of the interesting wrinkles thus far."
+author: "Adam Bushman"
+date: "2023-01-05"
+categories: [2023-24, draft, preview]
+image: "thumbnail.png"
+draft: true
+---
+
+## Intro
+
+Welcome to Jabber Jazz | Fan-driven, Ad-free content on Utah Jazz basketball
+
+Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
+
+Today:
+
+*   What's the 2023 NBA draft looking like for the Utah Jazz?
+
+Guest:
+
+*   Josh Roberts [@jayjazz3](https://twitter.com/jayjazz3)
+    -   Staple of Jazz Twitter
+    -   Big college basketball fan
+
+Like what we're doing? Consider...
+
+*   Subscribing
+*   Following
+*   Leaving a review or comment
+*   Snagging some merch
+
+Let's Jabber Jazz!
+
+
+## What's the 2023 NBA draft looking like for the Utah Jazz?
+
+```{r}
+#| echo: false
+
+library('tidyverse')
+
+# camcorder::gg_record(
+#   dir = 'C:/Users/Adam Bushman/Pictures/_test', 
+#   device = "png", 
+#   width = 10, 
+#   height = 10, 
+#   units = "cm", 
+#   dpi = 300
+# )
+
+data <-
+  read.csv('chips-landscape.csv') |>
+  group_by(Team) |>
+  summarise(
+    total = sum(Chips)
+  ) |>
+  ungroup()
+
+```
+
+Translating current first round draft picks and associated protections into lottery chips for each team. Second round picks aren't considered at this time.
+
+There are 420 total chips in circulation at all times (2 chips per team x 30 teams x 7 years of control).
+
+### Methodology
+
+*   Own Picks: 2
+    -   i.e. 2023 UTA 1st
+*   Unprotected Picks:
+    -   Receiver: 2
+    -   Sender: 0
+    -   i.e. 2023 MIN 1st
+*   Pick Swaps:
+    -   Receiver: 2
+    -   Sender: 2
+    -   i.e. 2028 CLE 1st
+*   ___ Favorable
+    -   All Parties Owned Picks: 2
+    -   i.e. 2023 1st between HOU, BKN, PHI, UTA
+*   Top 5 Protected Picks:
+    -   Receiver: 2
+    -   Sender: 0
+    -   i.e. 2029 MIN 1st
+*   Other # Protected Picks:
+    -   Receiver: 1
+    -   Sender: 1
+    -   i.e. 2024 SAC 1st
+*   Multi-year Protected Picks:
+    -   Receiver:
+        *   First year: 1-2 (see above)
+        *   Thereafter: 0
+    -   Sender:
+        *   First year: 0-1 (see above)
+        *   Thereafter: 2
+    -   2024 UTA 1st protected through 2026
+    
+
+### Results
+
+```{r}
+
+ggplot(data) +
+  geom_density(
+    aes(x = total), 
+    fill = "navy", 
+    alpha = 0.4
+  ) +
+  labs(
+    title = "Distribution of Implied Lottery \"Chips\"", 
+    subtitle = "Assumption of 2 chips per team per year.\nTeams have chip control 7 seasons out.", 
+    x = "Total Chips", 
+    y = "Density"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "#FFFFFF", color = NA), 
+    plot.title = element_text(
+      color = 'navy', face = 'bold', 
+      size = 13
+    ), 
+    plot.subtitle = element_text(
+      color = 'gray', face = 'italic', 
+      size = 8
+    )
+  )
+
+```
+
+
+```{r}
+
+ggplot(
+  data
+) +
+  geom_col(
+    aes(x = Team, y = total), 
+    fill = "navy", 
+    alpha = 0.4, 
+    width = 0.75, 
+    linewidth = 0.25, 
+    color = "black"
+  ) +
+  coord_flip() +
+  scale_x_discrete(limits=rev) +
+  labs(
+    title = "Implied Lottery \"Chips\" By Team", 
+    subtitle = "Assumption of 2 chips per team per year.\nTeams have chip control 7 seasons out.", 
+    y = "Total Chips"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "#FFFFFF", color = NA), 
+    plot.title = element_text(
+      color = 'navy', face = 'bold', 
+      size = 13
+    ), 
+    plot.subtitle = element_text(
+      color = 'gray', face = 'italic', 
+      size = 8
+    ), 
+    axis.text.y = element_text(size = 5), 
+    axis.title.y = element_blank()
+  )
+
+```
+
+
+
+## Close
+
+Thanks for listening!
+
+Like what we're doing? Here's how you can support
+
+*   Subscribe
+    -   [Podcast](https://linktr.ee/jabberjazz)
+    -   [Twitter | @Jabber_Jazz](https://twitter.com/Jabber_Jazz)
+    -   [YouTube](https://www.youtube.com/jabberjazz)
+*   Leave a review
+*   Score some Jabber Jazz merch
+    -   [Store](https://jabber-jazz.myspreadshop.com/)
