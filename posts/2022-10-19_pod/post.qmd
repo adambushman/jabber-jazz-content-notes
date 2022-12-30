@@ -1,12 +1,11 @@
 ---
 title: "2022-23 Utah Jazz Season Preview with James | Podcast"
+description: "The season is here! James and I get you ready as we count down the hours to Utah Jazz basketball once more. We dive into roster construction, rotation wrinkles, percolating storylines, and settle on some predictions."
 author: "Adam Bushman"
 date: "2022-10-19"
 categories: [2022-23, season, preview, predictions]
 image: "social-preview.png"
 ---
-
-The season is here! James and I get you ready as we count down the hours to Utah Jazz basketball once more. We dive into roster construction, rotation wrinkles, percolating storylines, and settle on some predictions.
 
 ## Intro
 

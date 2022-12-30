@@ -1,12 +1,11 @@
 ---
 title: "Media Day Mania"
+description: "Kicking off the return of Jabber Jazz, we dive into impressions from Utah Jazz Media Day from all the official statements."
 author: "Adam Bushman"
 date: "2022-09-28"
 categories: [podcast, 2022-23, preseason, media day]
 image: "lauri.jpg"
 ---
-
-Kicking off the return of Jabber Jazz, we dive into impressions from Utah Jazz Media Day from all the official statements.
 
 ## Intro
 

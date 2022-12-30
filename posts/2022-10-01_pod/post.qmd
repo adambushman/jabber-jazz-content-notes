@@ -1,12 +1,11 @@
 ---
 title: "Training Camp Check-in | Podcast"
+description: "The season is here! James and I get you ready as we count down the hours to Utah Jazz basketball once more. We dive into roster construction, rotation wrinkles, percolating story lines, and settle on some predictions."
 author: "Adam Bushman"
 date: "2022-10-01"
 categories: [2022-23, preseason, training camp, offseason, reports]
 image: "IMG_4636-1.jpg"
 ---
-
-The season is here! James and I get you ready as we count down the hours to Utah Jazz basketball once more. We dive into roster construction, rotation wrinkles, percolating story lines, and settle on some predictions.
 
 ## Intro
 

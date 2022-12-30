@@ -1,12 +1,11 @@
 ---
 title: "Temperature Check on the Jazz | Podcast"
+description: "Today we take a temperature check on Utah's strengths and weakness, muse about potential trades, and identify past NBA team comparisons."
 author: "Adam Bushman"
 date: "2022-11-28"
 categories: [podcast, 2022-23, season, review]
 image: "temp-check.png"
 ---
-
-Today we take a temperature check on Utah's strengths and weakness, muse about potential trades, and identify past NBA team comparisons.
 
 ## Intro
 

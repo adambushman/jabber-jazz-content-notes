@@ -1,12 +1,12 @@
 ---
 title: "Draft Preview #1 with Josh | Podcast"
+description: "Today we're joined by Josh Roberts to take our first look ahead to the 2023 NBA Draft. We review his big board and tackle some of the interesting wrinkles thus far."
 author: "Adam Bushman"
 date: "2022-12-07"
 categories: [2023-24, draft, preview]
 image: "thumbnail.png"
+draft: false
 ---
-
-Today we're joined by Josh Roberts to take our first look ahead to the 2023 NBA Draft. We review his big board and tackle some of the interesting wrinkles thus far.
 
 ## Intro
 
