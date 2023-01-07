@@ -1,10 +1,10 @@
 ---
-title: "Walker Kessler & Other Topics | Podcast"
-description: "Today we tackle 5 topics in 5 minutes each, beginning with Walker Kessler and ending with how the Jazz are uniquely positioned to lean into any direction with success."
+title: "Trade Talk Is Afoot | Podcast"
+description: "Today we review Utah Jazz trade ideas that have been floating around in NBA circles and bandied about between national writers and podcasters."
 author: "Adam Bushman"
 date: "2022-12-30"
-categories: [2023-24, development, trades, draft]
-image: "thumbnail.jpg"
+categories: [2023-24, development, trades, All-Star]
+image: "malik.jpg"
 draft: false
 ---
 
@@ -16,7 +16,9 @@ Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
 
 Today:
 
-*   5 topics in 5 minutes
+*   Trade talk is afoot; reviewing trade ideas from national media members
+*   Markkanen will be an All-Star
+*   Ochai sighting
 
 Like what we're doing? Consider...
 
@@ -28,89 +30,99 @@ Like what we're doing? Consider...
 Let's Jabber Jazz!
 
 
-## Walker Kessler Craze
+## Trade Talk Is Afoot
 
-*   Timeline...
-    -   Jazz trade for Walker
-    -   Injury prevents any Summer League
-    -   Immediate backup C in preseason, despite Zeller & Azubuike
-    -   Carved out a consistent 15-20 min playing time
-    -   Just finished a stretch of starting
-*   Performance
-    -   41 centers with 10 or fewer games started and 100 or more total minutes
-        *   Walker rank...
-        *   3rd in BPM
-        *   4th in minutes
-        *   7th in efficiency
-        *   35th in usage
-    -   Jazz with Kessler...
-        *   ON: +5.0
-        *   OFF: -1.7
-    -   Jazz with Kessler starting...
-        *   3-3
-        *   4th best plus-minues (2nd among starters)
-*   Walker is deserving to start sooner than later
-    -   Kelly can take Vando's spot or come off bench
-    -   Minutes can stay the same
-    -   Hopefully he turns into Zubac role
+These ideas came from the Lowe Post podcast. Zach Lowe and Bobby Marks of ESPN discussed these frameworks.
 
-## More John Collins Buzz
+We'll comment from a Jazz fan and team perspective.
 
-*   Shams Charania reported 
-[3 team framework](https://twitter.com/TheRally/status/1607511261473816578?s=20&t=SiibjwZmm6HeVmtQdqFfFg) 
-for a John Collins trade to Utah. Deal fell apart with UTah asking for multiple 1sts
-*   Vanderbilt + Beasley -> PHX, Crowder + Shamet -> ATL, Collins + 1st -> UTA
-*   Ainge should be asking for more
-    -   Collins is lowest value
-    -   Vando, Beas are peak value
-*   PHX is making off here like a bandit
-*   I'm bullish on Collins
-    -   Would you rather have Collins or a late 1st? Collins
-    -   Showed prior to Trae what he was capable of offensively
-    -   Showed in ECF why he can be a valuable rotation piece
-    -   This year is just a ton of bad luck
-*   Beas is a guy I want to keep
-    -   You'll be looking for his skillset eventually
-    -   Only 25
+*   Trade #1
+    -   UTA & BKN (made O'Neale trade in offseason)
+        *   Jarred Vanderbilt to BKN
+        *   DayRon Sharpe, Kessler Edwards, 2027 PHI 1st top 8 protected
+    -   Breakdown
+        *   DayRon Sharpe, 1 year in, 29th pick, traditional big, kind of an unknown (570 minutes)
+        *   Kessler Edwards, 1 year in, 44th pick, 6-8 wing, good shooter, not a ton else
+    -   Mostly this trade is about the pick Edwards
+        *   Many have circled Embiid as a guy to ask out; Harden is talking about going back to HOU; pick could be pretty decent
+        *   Edwards is a type who could flourish into a nice backup forward
+    -   In a vacuum, I probably do this; I would prefer other deals but I'm low on Vando's fit with Kessler
+*   Trade #2
+    -   UTA & MEM
+        *   Danny Green, filler, and a pick to UTA
+        *   Malik Beasley to MEM
+    -   Breakdown
+        *   Danny Green fully guarantee on Jan 10, UFA next season
+        *   Filler is likely a young player with some promise but non of MEM top 8
+        *   Pick is likely MEM own, protected somehow
+    -   Mostly this trade is about freeing up more cap space next year and getting a pick
+        *   Next year's class has guys like Grant, Porzingis, VanVleet
+    -   To me, this doesn't make enough sense;
+        *   Beasley is a piece you keep, IMO; you'll need his skillset anyways and is unlikely to lose any value anytime soon
+        *   Someone bulls you over? Sure, but not for this deal IMO
+*   Trade #3
+    -   UTA & GSW
+        *   Kelly Olynyk to GSW
+        *   James Wiseman + filler (discussed 2-1s) to UTA
+    -   Breakdown
+        *   Wiseman #2 pick, hardly any playing time between high school, college, NBA, and G-League
+        *   Shows flashes
+        *   The other guy isn't likely to have any value (not a core piece to GSW)
+    -   Basically this trade is about buying crazy low on a former top pick
+        *   In theory, this is the type of thing teams in our position gotta do
+    -   I wouldn't do this trade, though. I think it's very important for Utah to follow a LAC model at C
+        *   Traditional rim protector for 30 mins a night and 5-out able the rest of the time
+*   Trade #4
+    -   UTA & NOP
+        *   Malik Beasley to NOP
+        *   2025 MIL pick + filler
+            -   The filler was never much talked about but probably includes a combo of Garrett Temple, Devonte' Graham, Jaxon Hayes, Kira Lewis Jr.
+            -   2025 pick probably ages out Brook Lopez maybe Middleton leaves; still I think it's in the 20's
+    *   Basically again it's parts and a late pic
+        -   As is, I'm not doing it, again because I believe at 25 Malik fits Kessler, Markkanen, and new draft picks
+        -   But, if it was Dyson Daniels or Trey Murphy III and parts (no pick), yes I'd do it in a heartbeat
 
-## Leveraging Lauri
 
-*   Lauri is going bonkers
-    -   +9.0% rTS is crazy elite
-    -   Only Jokic and Durant exceed his efficiency for +24% USG and 1000+ minutes played
-    -   Making 44% of his 3's on 7 a game
-        *   Jazz need to plumb that like crazy, hopefully to get closer to 10 attempts per game
-*   Bad news is that usage is low and fit for #2
-    -   He's got a super low % of FGM unassisted
-    -   He struggles to get the ball and create for himself late in games or when defenses zero in on him
-    -   That's his development in the offseason
-        *   No shame if he's not that type of player
-            -   Basicaly he's year 2 Michael Porter Jr. with defense
-            -   Will be selected as an All-Star, in all likelihood
+## Markkanen Is an All-Star
 
-## Widening Draft Tier 2
+Markkanen will be an All-Star this year; it's done, IMO, and I'll tell you why
 
-*   All indications are that tier 2 of the NBA draft is getting wider
-    -   Anthony Black impressing
-    -   GG Jackson ascending
-    -   Ausar Thompson falling a little
-*   Josh Roberts (from last pod) 1-8 as All-Star potential and 9-13 as starter level
-*   There appears to be a lot of volatility in this range. A guy who may be slotted for 6 could end up at 10
-    -   This is good news for the Jazz, a team who best case scenario is in the middle here and worst case at the back end
+*   His line is absurd: 24.5 pts, 8.4 rbs, 1.9 ast, 1.8 tov on +9.6% rTS
+    -   Just take the pts, rbs, ast line adjusted worst by 10%
+    -   14 player seasons before this year did it: 12 made the All-Star game
+        *   Dan Issel did it on +4.0% rTS (0.327 win rate by All-Star)
+        *   Antawn Jamison did it on +0.5% rTS (0.207 win rate by All-Star)
+    -   Jazz are 0.487 win rate
+*   He's in the elite tier of efficiency
+    -   Only Jokic and Durant have a better TS% than Markkanen with more than 16.5 TSA/game
+    -   Guys right behind him? Curry, Davis, Williamson, Embiid...all All-Stars
+*   Utah Jazz are hosting in SLC
+    -   Over the past 25 All-Star games in cities with a host NBA team, 17 had at least one representative 
+    -   Teams/years that didn't?
+        *   Atlanta in 2021: 0.444 win rate at All-Star break
+        *   Chicago in 2020: 0.345
+        *   Los Angeles in 2018: 0.469
+        *   Denver in 2005: 0.453
+        *   Atlanta in 2003: 0.388
+        *   Washington DC in 2001: 0.245
+        *   Golden State in 2000: 0.255
+        *   New York in 1998: 0.543
+    -   These teams didh't have a guy like Markkanen and many were dumpster fire
+        *   Barring big trades, Jazz are likely above 0.500 by the break 
 
-## Positioning
+## Ochai Sighting
 
-*   At 19-18 the Jazz are almost halfway through the season and truly find themselves in "the middle"
-*   Really whichever way the Jazz want to go, there's a path to it
-    -   3.5 games out of a top 7 seed
-    -   Currently slotted for the play in
-    -   1 game out of a top 6 seed for the Western Conference
-*   Looking ahead with the projection systems, if Jazz want
-    -   A #3 odds, that's 25 wins; 0.133 win rate
-    -   A #7 odds, that's 35 wins; 0.355 win rate
-    -   A #10 odds, that's 39 wins; a 0.444 win rate
-    -   A #14 odds, that's 42 wins, a 0.511 win rate
-    -   Jazz have a 0.400 win rate since Nov. 9
+Finally we saw Ochai play actual, high leverage minutes:
+
+*   Against Houston
+    -   First stint was 4:55, Jazz were a -3
+    -   Second stint was 12:44, all of the 4th, Jazz were a +11
+    -   Finished with 11 points, 1 rebound; 3-4 from 3
+        *   Hardy said he'd get more time and this was a good sign
+        *   Looked like he knew more where to be and what was going on
+        *   Still didn't impact the game a ton outside of scoring
+    -   There was a reason he was drafted #14 and also a reason he hasn't seen the floor. One game doesn't change any of that, not would a bad game have. Let's keep evaluating.
+
     
 ## Close
 
