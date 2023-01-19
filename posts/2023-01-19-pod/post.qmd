@@ -1,0 +1,263 @@
+---
+title: "Draft Preview #2 with Leif | Podcast"
+description: "Today we're joined by Leif Thulin to take our another look at the 2023 NBA Draft. We review his big board and hit some of the controversial topics around recent risers."
+author: "Adam Bushman"
+date: "2023-01-19"
+categories: [2023-24, draft, preview]
+image: "thumbnail.png"
+draft: false
+---
+
+## Intro
+
+Welcome to Jabber Jazz | Fan-driven, Ad-free content on Utah Jazz basketball
+
+Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
+
+Today:
+
+*   Our second look ahead to the 2023 NBA draft
+
+Guest:
+
+*   Leif Thulin [@LeifThulin](https://twitter.com/LeifThulin/)
+    -   Jazz broadcast assistant
+    -   Co-host of Locked On NBA Big Board
+    -   Producer at ESPN700
+
+
+Like what we're doing? Consider...
+
+*   Subscribing
+*   Following
+*   Leaving a review or comment
+*   Snagging some merch
+
+Let's Jabber Jazz!
+
+
+## Second 2023 NBA draft Look Ahead
+
+Starter Questions:
+
+*   How do you describe your evaluation?
+*   What are the player archtypes or skills that "break ties" for you?
+*   What's the next fad you anticipate that defines player comps and skill set preferences?
+
+```{r}
+#| echo: false
+
+to_age <- function(birthdate) {
+  age = round(as.numeric((lubridate::as_date(Sys.Date()) - lubridate::as_date(birthdate)) / 365.25), 1)
+  
+  if(stringr::str_length(as.character(age)) == 2) {
+    age = paste(age, ".0", sep = "")
+  }
+  return(as.character(age))
+}
+
+tiers <- 
+  readxl::read_xlsx(
+    'C:/Users/Adam Bushman/Documents/R/jabber-jazz-content-notes/master_files/2023_draft_big_boards.xlsx', 
+    sheet = 'Leif-Thulin'
+  ) |>
+  dplyr::mutate(
+    age = unlist(purrr::map(birthdate, to_age))
+  ) |> 
+  dplyr::select(-birthdate)
+
+
+```
+
+### First 10
+
+Questions:
+
+*   How do you tier the first few prospects? Wemby and everyone? Scoot on an island?
+*   Brandon Miller: what are the debates here?
+    -   YES: he's done this for long enough
+    -   YES: he was highly thought of
+    -   YES: others around him have flaws too
+*   GG Jackson: rising across big boards? Why and how far?
+*   Anthony Black is an electric play maker; what's the weakness and NBA comp?
+
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(stringr::str_detect(tier, "First 10")) |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+  gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+  gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Leif's Big Board", 
+    subtitle = "2023 NBA Draft | As of Jan 12th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Leif Thulin | Twitter: @LeifThulin") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  )
+
+```
+
+
+### Middle 10
+
+Questions:
+
+*   Nick Smith Jr. out of the top 10 is pretty unique; what's the deal?
+*   Jarace Walker...where is he defensively and athletically? Cam lite?
+*   Jazz likely to have a pick in 9 - 13 range; who are you shooting for?
+*   Baba Miller doesn't seem to be getting a lot of attention
+    -   Draymond Green offense, Tayshaun Prince defense
+*   Jett Howard vs Gradey Dick as a shooter?
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(stringr::str_detect(tier, "Middle 10")) |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+    gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+    gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Leif's Big Board", 
+    subtitle = "2023 NBA Draft | As of Jan 12th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Leif Thulin | Twitter: @LeifThulin") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  ) 
+
+```
+
+
+### Last 10
+
+Questions:
+
+*   Kyle Filipowski: pretty low on him, what's the gap? Is he just Frank Kaminsky 2.0?
+*   Rayan Rupert -> what makes him an intriguing player?
+*   Brice Sensabaugh is another guy not gettin much fanfare
+*   Jazz should have a pick in the bottom 5; who sticks out??
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(stringr::str_detect(tier, "Last 10")) |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+    gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+    gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Leif's Big Board", 
+    subtitle = "2023 NBA Draft | As of Jan 12th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Leif Thulin | Twitter: @LeifThulin") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  ) 
+
+```
+
+
+### This Season
+
+Thoughts on this season?
+
+*   The young guys
+*   Who's part of the future
+*   How does the team lean going forward?
+
+## Close
+
+Thanks for listening!
+
+Like what we're doing? Here's how you can support
+
+*   Subscribe
+    -   [Podcast](https://linktr.ee/jabberjazz)
+    -   [Twitter | @Jabber_Jazz](https://twitter.com/Jabber_Jazz)
+    -   [YouTube](https://www.youtube.com/jabberjazz)
+*   Leave a review
+*   Score some Jabber Jazz merch
+    -   [Store](https://jabber-jazz.myspreadshop.com/)
