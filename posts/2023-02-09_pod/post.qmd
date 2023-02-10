@@ -1,0 +1,157 @@
+---
+title: "A Wild Deadline Review | Podcast"
+description: "Today we review what was a wild and boisterous trade deadline in the NBA where moves from the Utah Jazz and other corners of the league rock the playoff and draft outlook."
+author: "Adam Bushman"
+date: "2023-02-10"
+categories: [2023-24, season, trades, draft]
+image: "thumbnail.jpg"
+draft: false
+---
+
+## Intro
+
+Welcome to Jabber Jazz | Fan-driven, Ad-free content on Utah Jazz basketball
+
+Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
+
+Today:
+
+*   A wild deadline in review
+    -   Affects of the playoff race
+    -   Affect on the draft outlook
+*   Future of the Utah Jazz
+
+Like what we're doing? Consider...
+
+*   Subscribing
+*   Following
+*   Leaving a review or comment
+*   Snagging some merch
+
+Let's Jabber Jazz!
+
+
+## A Wild Deadline in Review
+
+### Jazz Trade
+
+*   Jazz made a trade...plenty of times we were mad they didn't
+*   UTA, LAL, MIN
+    -   Russell Westbrook + top-4 protected 1st -> UTA
+    -   Mike Conley + Nickeil Alexander-Walker -> MIN
+    -   D'Angelo Russell + Malik Beasley + Jarred Vanderbilt -> LAL
+*   The good
+    -   Excellent pick on the horizon
+    -   Lots of guys get to really compete
+        *   The guys weren't going to help in 2025-26
+        *   Two 2nds weren't likely to help in 2025-26
+        *   Even two heavily protected picks weren't likely to help in 2025-26
+        *   But there's real upside for the LAL pick to help that team and their competitive seasons beyond
+    -   Jazz improve their draft position
+    -   Lakers should improve
+    -   Wolves worse long term
+    -   Cap space this summer
+    -   Playing time for Agbaji, Sexton, Fontecchio
+*   The bad
+    -   Disappointing no true unprotected pick
+        *   Wanted a pick each
+        *   Real market was multiple 2nds
+        *   Beasley could've fetched a heavily protected 1st
+        *   Given all the picks we had, Jazz chose quantity over quality
+    -   Andy Larsen broke down some of the pick value
+        *   What the Jazz did was take some knowns for real upside down the road
+    -   Best case scenario Wolves stay neutral
+        *   Conley gives them the unique benefits they need
+    -   Turns into a second if it doesn't convey
+        *   I don't think the Jazz ever make the selection
+
+
+### Who got better? Who got worse?
+
+```{r}
+#| echo: false
+#| warning: false
+
+library('gt')
+library('dplyr')
+
+data <- read.csv('C:/Users/Adam Bushman/Documents/R/jabber-jazz-content-notes/posts/2023-02-09_pod/deadline-movement.csv')
+
+gt(data) %>%
+  tab_header(
+    title = "2023 Trade Deadline Movement", 
+    subtitle = "A look at the incoming and outgoing assets for every team"
+  ) %>%
+  cols_merge(
+    columns = c(GB, PGB, PIGB), 
+    pattern = "#1 Seed: {1}<br>Playoffs: {2}<br>Play-in: {3}"
+  ) |>
+  cols_label(
+    TEAM = "Team", 
+    CONF = "Conf", 
+    GB = "Games Behind", 
+    IN = "Incoming Assets", 
+    OUT = "Outgoing Assets", 
+    RESULT = "Rest of Season", 
+    FINAL_SEED_EST = "Final Seed Estimate"
+  ) |>
+  cols_width(
+    GB ~ px(100)
+  ) |>
+  tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    column_labels.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0)
+  )
+
+
+```
+
+### Playoff Race
+
+*   PHX and DAL join MEM and DEN in an elite 4 rivaling the 4 in the East
+*   BKN and LAL slide to the play-in
+
+### Draft Outlook
+
+*   TOR and POR do enough to fall to the back of the lottery
+*   UTA slides to the front of the 2nd tier (after HOU, SAS, CHA, ORL, DET)
+    -   IND is biggest competition here
+
+
+## Future of the Utah Jazz
+
+*   2023
+    -   Draft
+        *   538 projects UTA at 11th, MIN at 16th, PHI at 25th
+    -   Free agency
+        *   Jazz clear max + cap space for various avenues
+*   Beyond
+    -   2024: first of the years our pick conveys to OKC; probably keep it
+    -   2025: 2 unprotected, last year Jazz are okay to convey to OKC
+        *   Jazz will have decision on Markkanen
+        *   Jazz hoping to begin their championship window
+    -   2026: big swap year with CLE, MIN
+        *   RFA on Kessler (likely extended prior) and Agbaji
+    -   2027: 3 unprotected, 1 top-4 protected from LAL
+        *   RFAs on the rookies in this draft
+    -   2028: CLE swap
+    -   2029: 2 unprotected, 1 top-5 protected from MIN
+*   A lot of hope and potential
+
+## Close
+
+Thanks for listening!
+
+Like what we're doing? Here's how you can support
+
+*   Subscribe
+    -   [Podcast](https://linktr.ee/jabberjazz)
+    -   [Twitter | @Jabber_Jazz](https://twitter.com/Jabber_Jazz)
+    -   [YouTube](https://www.youtube.com/jabberjazz)
+*   Leave a review
+*   Score some Jabber Jazz merch
+    -   [Store](https://jabber-jazz.myspreadshop.com/)

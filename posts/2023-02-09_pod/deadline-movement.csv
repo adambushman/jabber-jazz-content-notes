@@ -1,0 +1,31 @@
+TEAM,CONF,GB,PGB,PIGB,IN,OUT,RESULT,FINAL_SEED_EST
+BOS,EAST,0,0,0,Muscala,"Jackson, 2nd-2",BETTER,1
+DEN,WEST,0,0,0,"Bryant, 2nd-2","Hyland, 2nd-3",NEUTRAL,1
+MIL,EAST,1.5,0,0,Crowder,"Nwora, Hill, Ibaka, 2nd-5",BETTER,2
+MEM,WEST,4,0,0,Kennard,Green,BETTER,2
+PHI,EAST,4,0,0,McDaniels,"Thybulle, 2nd-#",BETTER,3
+PHX,WEST,8.5,0,0,"Durant, Warren, Bazley","Bridges, Johnson, Crowder, Saric, 1st-4, Swap-1",BETTER,3
+CLE,EAST,5,0,0,,,NEUTRAL,4
+DAL,WEST,8,0,0,"Irving, Morris","Finney-Smith, Dinwiddie, 1st-1",BETTER,4
+SAC,WEST,6,0,0,"Edwards, cash",,NEUTRAL,5
+MIA,EAST,9,0,0,,"Dedmon, 2nd-1",NEUTRAL,5
+LAC,WEST,8,0,0,"Hyland, Gordon, Plumlee","Jackson, Kennard, 2nd-5",BETTER,6
+NYK,EAST,9.5,0.5,0,Hart,"Reddish, 1st-1",NEUTRAL,6
+BKN,EAST,6,0,0,"Bridges, Johnson, Finney-Smith, Dinwiddie, 1st-5, Swap-1, 2nd-3","Durant, Irving, Morris, Edwards, Warren, cash",WORSE,7
+NOP,WEST,9,0.5,0,Richardson,"Graham, 2nd-4",BETTER,7
+GSW,WEST,9.5,1,0,"Payton II, 2nd-5","2nd-5, Wiseman",BETTER,8
+ATL,EAST,11.5,2.5,0,"Bey, Matthews, Fernando","Holiday, Kaminsky",BETTER,8
+LAL,WEST,12.5,4,2,"Hashimura, Russell, Beasley, Vanderbilt, Bamba, Reed, 2nd-3","Westbrook, Toscano-Anderson, Jones, Nunn, Beverley, Bryant, 1st-1, 2nd-2",BETTER,9
+TOR,EAST,13.5,4.5,0,Poeltl,"Birch, 1st-1, 2nd-2",BETTER,9
+OKC,WEST,11,2.5,0.5,"Jackson, Saric, 2nd-1","Bazley, Muscala",NEUTRAL,10
+CHI,EAST,13,4,0,,,NEUTRAL,10
+MIN,WEST,9,0.5,0,"Conley, Alexander-Walker, 2nd-3",Russell,NEUTRAL,11
+WAS,EAST,13.5,4.5,0,"Nunn, 2nd-3x",Hashimura,NEUTRAL,11
+POR,WEST,10.5,2,0,"Thybulle, Reddish, Knox, 1st-1, 2nd-5","Payton II, Mykhailuk, Hart",NEUTRAL,12
+IND,EAST,14.5,5.5,1,"Nwora, Hill, Ibaka, 2nd-3, cash",,NEUTRAL,12
+UTA,WEST,11,2.5,0.5,"Westbrook, Jones, Toscano-Anderson, 1st-1","Conley, Beasley, Vanderbilt, 2nd-2",WORSE,13
+ORL,EAST,16.5,7.5,3,"Beverley, 2nd-2",Bamba,NEUTRAL,13
+SAS,WEST,23.5,15,13,"Graham, Birch, Dedmon, 1st-1, 2nd-7","Poeltl, Richardson",NEUTRAL,14
+CHA,EAST,24.5,15.5,11,"Jackson, Mykhailuk, 2nd-#",Plumlee,NEUTRAL,14
+HOU,WEST,24.5,16,14,"Green, Wall, Kaminsky, Holiday",Gordon,NEUTRAL,15
+DET,EAST,25.5,16.5,12,"Wiseman, 2nd-3x",Bey,NEUTRAL,15
