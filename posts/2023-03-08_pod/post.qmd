@@ -1,0 +1,360 @@
+---
+title: "Draft Preview #3 with Mark | Podcast"
+description: "Today we're joined by Mark to digest the 2023 NBA Draft ahead of March Madness. We review his big board, brainstorm strategy, and muse about player archetypes."
+author: "Adam Bushman"
+date: "2023-03-08"
+categories: [2023-24, draft, preview]
+image: "thumbnail.jpg"
+draft: true
+---
+
+
+## Intro
+
+Welcome to Jabber Jazz | Fan-driven, Ad-free content on Utah Jazz basketball
+
+Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
+
+Today:
+
+*   Our third look ahead to the 2023 NBA draft
+
+Guest:
+
+*   Mark [@MarkW_E01](https://twitter.com/MarkW_E01)
+    -   Jazz and Falcons super fan
+    -   Long history of NBA & NFL draft analysis
+
+
+Like what we're doing? Consider...
+
+*   Subscribing
+*   Following
+*   Leaving a review or comment
+*   Snagging some merch
+
+Let's Jabber Jazz!
+
+
+## Third 2023 NBA draft Look Ahead
+
+Starter Questions:
+
+*   What matters/doesn't matter to you different from consensus in prospect evaluation?
+*   What are the player archtypes or skills that "break ties" for you?
+*   What's the next fad you anticipate that defines player comps and skill set preferences?
+
+```{r}
+#| echo: false
+
+to_age <- function(birthdate) {
+  age = round(as.numeric((lubridate::as_date(Sys.Date()) - lubridate::as_date(birthdate)) / 365.25), 1)
+  
+  if(stringr::str_length(as.character(age)) == 2) {
+    age = paste(age, ".0", sep = "")
+  }
+  return(as.character(age))
+}
+
+tiers <- 
+  readxl::read_xlsx(
+    'C:/Users/Adam Bushman/Documents/R/jabber-jazz-content-notes/master_files/2023_draft_big_boards.xlsx', 
+    sheet = 'Mark'
+  ) |>
+  dplyr::mutate(
+    age = paste(unlist(purrr::map(birthdate, to_age)), "yrs")
+  ) |> 
+  dplyr::select(-birthdate)
+
+```
+
+### Tier 1 & 2
+
+Questions:
+
+*   What's keeping Scoot in a tier all to himself?
+
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(tier %in% c("Tier 1", "Tier 2")) |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+  gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+  gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Mark's Big Board", 
+    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  )
+
+```
+
+
+### Tier 3
+
+Questions:
+
+*   Biggest difference between Amen & Ausar
+*   What if the shot never comes around for the Thompson Twins? Ceiling?
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(tier %in% "Tier 3") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+  gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+  gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Mark's Big Board", 
+    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  )
+
+```
+
+
+### Tier 4
+
+Questions:
+
+*   What is it about Walker that puts him just ahead of Whitmore?
+*   How big is the bust potential for GG Jackson?
+*   What do you make of the Anthony Black-Josh Giddey comp?
+*   What are you seeing in Jett Howard to put him top 10?
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(tier %in% "Tier 4") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+  gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+  gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Mark's Big Board", 
+    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  )
+
+```
+
+### Tier 5
+
+Questions:
+
+*   What do you like about Hendricks?
+*   How's the Taylor Hendricks fit with Markkanen & Kessler?
+*   Break down Cissoko's game for those less familiar with him.
+*   What aren't you seeing in Wallace to have him at just 16?
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(tier %in% "Tier 5") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+  gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+  gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Mark's Big Board", 
+    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  )
+
+```
+
+
+### Tier 6
+
+Questions:
+
+*   Who's the best fit for the Jazz out of this tier and why?
+*   Who's got the highest ceiling and who is that type of player?
+*   What are your concerns with Brice Sensabaugh?
+*   Would you prefer to Kick the BKN pick down the road or make the selection?
+
+```{r}
+#| echo: false
+
+tiers |>
+  dplyr::filter(tier %in% "Tier 6") |>
+  gt::gt(
+    rowname_col = "pick", 
+    groupname_col = "tier"
+  ) |>
+  gt::cols_merge(
+    columns = c(off_position, def_position), 
+    pattern = "{1}<br>{2}"
+  ) |>
+  gt::cols_merge(
+    columns = c(height, weight, age), 
+    pattern = "{1}<br>{2}<br>{3}"
+  ) |>
+  gt::tab_header(
+    title = "Mark's Big Board", 
+    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
+  ) |>
+  gt::cols_label(
+    name = "Prospect Name", 
+    off_position = "Position", 
+    height = "Measures", 
+    club = "Club Name"
+  ) |>
+  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
+  gt::tab_style(
+    style = gt::cell_text(size = gt::px(11)), 
+    locations = gt::cells_body(columns = c(height, off_position))
+  ) |>
+  gt::tab_options(
+    heading.background.color = "#050505", 
+    
+    column_labels.font.weight = "bold", 
+    
+    row_group.background.color = "#f6ee26", 
+    row_group.padding = gt::px(0), 
+    
+    source_notes.background.color = "#dbe2ea"
+  )
+
+```
+
+
+
+### This Season
+
+Thoughts on this season?
+
+
+
+## Close
+
+Thanks for listening!
+
+Like what we're doing? Here's how you can support
+
+*   Subscribe
+    -   [Podcast](https://linktr.ee/jabberjazz)
+    -   [Twitter | @Jabber_Jazz](https://twitter.com/Jabber_Jazz)
+    -   [YouTube](https://www.youtube.com/jabberjazz)
+*   Leave a review
+*   Score some Jabber Jazz merch
+    -   [Store](https://jabber-jazz.myspreadshop.com/)
