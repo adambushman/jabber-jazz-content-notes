@@ -1,6 +1,6 @@
 ---
-title: "dsdfs | Podcast"
-description: "Test"
+title: "State of the Utah Jazz | Podcast"
+description: "The season is winding down and we're taking inventory on the state of the team. From pick status and remaining schedule to the core nucleus and future roster construction."
 date: "2023-03-20"
 categories: [2023-24, season, draft]
 image: "thumbnail.jpg"
@@ -15,9 +15,7 @@ Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
 
 Today:
 
-*   The tank is on
-*   League factors affecting the draft
-*   Random news & notes
+*   Asdf
 
 Like what we're doing? Consider...
 
@@ -29,17 +27,141 @@ Like what we're doing? Consider...
 Let's Jabber Jazz!
 
 
-## The Tank is On
+## Pick Status
+
+*   Current positions
+    -   FiveThirtyEight says...
+        *   UTA: 10
+        *   MIN: 13 (tie)
+        *   HOU/BKN/PHI: 28
+*   Complications
+    -   MIN injuries
+        *   Edwards, Towns, Conley (coming)
+    -   UTA plan
+        *   Interpretation
+            -   Decide player status based on health and opponent;
+            -   Upon tipoff, all out for the win
+    -   Additional tankers
+        *   POR, IND have rested big portions of the rotation and considering player "shut down"
+    -   Time
+        *   LAL and LeBron
+        *   NOP, Zion and Ingram
+*   Takeaways
+    -   Only real way to ensure competitive draft position is your strategy
+    -   Jazz employed a strategy VERY late
+    -   No other teams have a Markkanen, Walker, and Hardy so its hard to tank
+*   Does it matter?
+    -   #7 and #10 are in fair play
+        *   Requires like 2 wins rest of the way
+        *   Win lotto: 11% vs 14%
+        *   Jump to top 4: 46% vs 52%
+        *   This is the end of a high upside draft range with some volatility
+    -   #10 and #11
+        *   Win lotto: 4% vs 14%
+        *   19% vs 52%
+        *   This is a draft range that is similar talent wise into the late teens
+    -   Why have a high pick?
+        *   Depend on the fewest teams to "misevaluate" 
+    -   Impact?
+        *   Affects ceiling
+        *   Doesn't mean the Jazz won't be good
+
 
 ## Thoughts on the Nucleaus
 
 *   Lauri Markkanen
+    -   Best combo of dunks + threes in the league
+    -   Rivals only Kevin Durant all-time
+    -   Starting to get All-NBA buzz
+        *   A complication for the "tanking"
+    -   Definitely a top 15 season
+        *   Doesn't mean a top 15 player
+        *   Ringer put him at 28
+        *   Siakam, Haliburton, Brown, Sabonis, Young, Irving, etc. all done it longer than Markkanen
 *   Walker Kessler
+    -   Drafted 22nd, 30+ games started
+    -   Top 3 rookie season
+    -   Where does he rank among starting centers?
+        *   Back in December I put him in the bottom 11 tier with Plumlee, Nurkic, etc.
+            -   Still hadn't started a game, just 16 mpg
+        *   Now?
+            -   Tier 3, right about average
+            -   Massive win for the franchise
+            
+|Tier|Centers|
+|-----:|:-----------------------------------|
+|1|Embiid, Jokic|
+|2|Adebayo, Turner, Gobert, Lopez, Allen, Horford, Ayton|
+|3|Zubac, Adams, Capela, Carter Jr., Powell, Claxton| Valanciunas, Duren, Sengun, Poeltl, Porzingis|
+|4|Vucevic, Plumlee, Len, Hartenstein, Bryant, Koloko, Muscala, Nurkic, Wiseman|
+          
+            
 *   Ochai Agbaji
-    -   asdf
+    -   Performing real well of late, showing some expanded skills
+    -   Non-straight line drive, movement shooting, finishes at the rim, defensive activity
+    -   Gaining that confidence of where to be, what to do
+        *   Used to just run from corner to corner
+    -   At 37% from 3, 147 attempts
+        *   39%, 126 attempts
+    -   Tony Jones, The Athletic
+        *   Jazz high on Agbaji, definitely part of the core
+        *   They see him as a 2; lean toward a 3 in the draft
+
 
 ## March Madness Notes
-    
+
+*   Cason Wallace
+    -   Showed everything in that K State game
+        *   Defense, creation, finishing, toughness, shot makingn
+        *   Not the high upside guy but the type who coaches will trust and has a great foundation in everything
+*   Gradey Dick
+    -   Saw the contrasts:
+        *   vs Howard you see why he's a late lotto pick
+        *   vs Arkansas you see why the upside is questionable
+    -   Ultimately he's going to be dependend on teammates and coaches to leverage him in the scheme
+*   Anthony Black
+    -   Just locked up Gradey Dick; made him a non-factor
+    -   Feels like he doesn't have the leway to get his usage up
+        *   Holding back offensively
+        *   Will need a franchise who encourages and believes in his outside shot
+*   Jarace Walker
+    -   Houston is geared around Sasser, for good or bad
+        *   Jarace doesn't get the touches or the shot volume but impacts things
+        *   You get him in a situation where a team begs him to shine offensively will be good
+    -   Integral to the Auburn comeback
+        *   High level defensively; 6 blocks and a lot of transition disruption
+*   Brandon Miller
+    -   Morphs for what is needed; didn't need to explode vs Corpus Christi
+    -   Shined on both ends vs Maryland
+*   Nick Smith Jr.
+    -   Just don't "feel his impact"
+    -   Workouts will be crucial for him
+*   Keyonte George
+    -   Had "duds" in both games, really
+*   Nice showings
+    -   Terquavion Smith, Dereck Lively II, Jalen-Hood Schifino, Dariq Whitehead
+    -   Kyle Filipowski
+
+
+## Offseason Question Marks
+
+*   A lot of the buzz is the Jazz achieve contention again in 2025/26 via trade
+    -   With all the picks in tow, they're uniquely positioned to land the next available guy
+    -   Who is that?
+        *   Many talk about Luka if but he and a handful of others are made available, they pick where they go
+        *   Could be Lillard or Butler but that's a pretty short term approach
+    -   Fans have a unique list: young, star, team control, fit
+        *   But also must be gettable, healthy, etc.
+    -   My personal theory
+        *   LaMelo Ball is the guy that balances a lot of that
+        *   I like the fit with Markkanen, Kessler, and Agbaji
+    -   Other theories
+        *   Jaylen Brown
+            -   Buzz of discontent in BOS
+            -   Ainge reached for him in the draft, Hardy was "his guy" as a coach
+            -   IMO, it requires a three team deal
+            -   Love the fit, however
+
 
 ## Close
 
