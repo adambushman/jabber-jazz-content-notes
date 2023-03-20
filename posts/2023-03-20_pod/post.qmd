@@ -4,7 +4,7 @@ description: "The season is winding down and we're taking inventory on the state
 date: "2023-03-20"
 categories: [2023-24, season, draft]
 image: "thumbnail.jpg"
-draft: true
+draft: false
 ---
 
 ## Intro
@@ -15,7 +15,10 @@ Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
 
 Today:
 
-*   Asdf
+*   Pick status
+*   Remaining schedule
+*   The core nucleus
+*   Future roster construction
 
 Like what we're doing? Consider...
 
@@ -56,12 +59,12 @@ Let's Jabber Jazz!
         *   Win lotto: 11% vs 14%
         *   Jump to top 4: 46% vs 52%
         *   This is the end of a high upside draft range with some volatility
-    -   #10 and #11
+    -   #10 and #13
         *   Win lotto: 4% vs 14%
         *   19% vs 52%
         *   This is a draft range that is similar talent wise into the late teens
     -   Why have a high pick?
-        *   Depend on the fewest teams to "misevaluate" 
+        *   Depend on the fewest teams to "mis evaluate" 
     -   Impact?
         *   Affects ceiling
         *   Doesn't mean the Jazz won't be good
@@ -112,7 +115,7 @@ Let's Jabber Jazz!
 
 *   Cason Wallace
     -   Showed everything in that K State game
-        *   Defense, creation, finishing, toughness, shot makingn
+        *   Defense, creation, finishing, toughness, shot making
         *   Not the high upside guy but the type who coaches will trust and has a great foundation in everything
 *   Gradey Dick
     -   Saw the contrasts:
@@ -140,6 +143,7 @@ Let's Jabber Jazz!
     -   Had "duds" in both games, really
 *   Nice showings
     -   Terquavion Smith, Dereck Lively II, Jalen-Hood Schifino, Dariq Whitehead
+*   Poor showings
     -   Kyle Filipowski
 
 
