@@ -4,7 +4,7 @@ description: "Today we're joined by AJ to digest the 2023 NBA Draft in the wake 
 author: "Adam Bushman"
 date: "2023-04-10"
 categories: [2023-24, draft, preview]
-image: "thumbnail.jpg"
+image: "thumbnail.png"
 draft: false
 ---
 
