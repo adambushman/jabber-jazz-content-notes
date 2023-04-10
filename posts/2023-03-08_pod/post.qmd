@@ -8,6 +8,19 @@ image: "thumbnail.jpg"
 draft: false
 ---
 
+```{r}
+#| echo: false
+#| warning: false
+#| error: false
+
+here::i_am('posts/2023-03-08_pod/post.qmd')
+
+library('here')
+library('tidyverse')
+library('gt')
+library('gtExtras')
+
+```
 
 ## Intro
 
@@ -44,9 +57,18 @@ Starter Questions:
 *   What are the player archtypes or skills that "break ties" for you?
 *   What's the next fad you anticipate that defines player comps and skill set preferences?
 
+
 ```{r}
 #| echo: false
 
+
+# Guest variables
+name = "Mark"
+as_of_date = "February 28th, 2023"
+twitter_handle = "@MarkW_E01"
+
+
+# Transforming birthday to age
 to_age <- function(birthdate) {
   age = round(as.numeric((lubridate::as_date(Sys.Date()) - lubridate::as_date(birthdate)) / 365.25), 1)
   
@@ -56,15 +78,59 @@ to_age <- function(birthdate) {
   return(as.character(age))
 }
 
+# Transforming birthday to age
 tiers <- 
   readxl::read_xlsx(
-    'C:/Users/Adam Bushman/Documents/R/jabber-jazz-content-notes/master_files/2023_draft_big_boards.xlsx', 
+    here("master_files/2023_draft_big_boards.xlsx"), 
     sheet = 'Mark'
-  ) |>
+  ) %>%
   dplyr::mutate(
-    age = paste(unlist(purrr::map(birthdate, to_age)), "yrs")
-  ) |> 
+    age = paste(unlist(purrr::map(birthdate, to_age)), "yrs"), 
+    tier = paste("Tier:", tier)
+  ) %>% 
   dplyr::select(-birthdate)
+
+render_tier <- function(board, selected_tiers) {
+  board %>%
+    filter(tier %in% selected_tiers) %>%
+    gt(
+      rowname_col = "pick", 
+      groupname_col = "tier"
+    ) %>%
+    cols_merge(
+      columns = c(off_position, def_position), 
+      pattern = "{1}<br>{2}"
+    ) %>%
+    cols_merge(
+      columns = c(height, weight, age), 
+      pattern = "{1}<br>{2}<br>{3}"
+    ) %>%
+    tab_header(
+      title = glue::glue("{name}'s Big Board"), 
+      subtitle = glue::glue("2023 NBA Draft | As of {as_of_date}")
+    ) %>%
+    cols_label(
+      name = "Prospect Name", 
+      off_position = "Position", 
+      height = "Measures", 
+      club = "Club Name"
+    ) %>%
+    tab_source_note(source_note = glue::glue("{name} | Twitter: {twitter_handle}")) %>%
+    tab_style(
+      style = cell_text(size = px(11)), 
+      locations = cells_body(columns = c(height, off_position))
+    ) %>%
+    tab_options(
+      heading.background.color = "#050505", 
+      
+      column_labels.font.weight = "bold", 
+      
+      row_group.background.color = "#f6ee26", 
+      row_group.padding = px(0), 
+      
+      source_notes.background.color = "#dbe2ea"
+    )
+}
 
 ```
 
@@ -78,45 +144,7 @@ Questions:
 ```{r}
 #| echo: false
 
-tiers |>
-  dplyr::filter(tier %in% c("Tier 1", "Tier 2")) |>
-  gt::gt(
-    rowname_col = "pick", 
-    groupname_col = "tier"
-  ) |>
-  gt::cols_merge(
-    columns = c(off_position, def_position), 
-    pattern = "{1}<br>{2}"
-  ) |>
-  gt::cols_merge(
-    columns = c(height, weight, age), 
-    pattern = "{1}<br>{2}<br>{3}"
-  ) |>
-  gt::tab_header(
-    title = "Mark's Big Board", 
-    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
-  ) |>
-  gt::cols_label(
-    name = "Prospect Name", 
-    off_position = "Position", 
-    height = "Measures", 
-    club = "Club Name"
-  ) |>
-  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
-  gt::tab_style(
-    style = gt::cell_text(size = gt::px(11)), 
-    locations = gt::cells_body(columns = c(height, off_position))
-  ) |>
-  gt::tab_options(
-    heading.background.color = "#050505", 
-    
-    column_labels.font.weight = "bold", 
-    
-    row_group.background.color = "#f6ee26", 
-    row_group.padding = gt::px(0), 
-    
-    source_notes.background.color = "#dbe2ea"
-  )
+render_tier(tiers, c("Tier: 1", "Tier: 2"))
 
 ```
 
@@ -131,45 +159,7 @@ Questions:
 ```{r}
 #| echo: false
 
-tiers |>
-  dplyr::filter(tier %in% "Tier 3") |>
-  gt::gt(
-    rowname_col = "pick", 
-    groupname_col = "tier"
-  ) |>
-  gt::cols_merge(
-    columns = c(off_position, def_position), 
-    pattern = "{1}<br>{2}"
-  ) |>
-  gt::cols_merge(
-    columns = c(height, weight, age), 
-    pattern = "{1}<br>{2}<br>{3}"
-  ) |>
-  gt::tab_header(
-    title = "Mark's Big Board", 
-    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
-  ) |>
-  gt::cols_label(
-    name = "Prospect Name", 
-    off_position = "Position", 
-    height = "Measures", 
-    club = "Club Name"
-  ) |>
-  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
-  gt::tab_style(
-    style = gt::cell_text(size = gt::px(11)), 
-    locations = gt::cells_body(columns = c(height, off_position))
-  ) |>
-  gt::tab_options(
-    heading.background.color = "#050505", 
-    
-    column_labels.font.weight = "bold", 
-    
-    row_group.background.color = "#f6ee26", 
-    row_group.padding = gt::px(0), 
-    
-    source_notes.background.color = "#dbe2ea"
-  )
+render_tier(tiers, c("Tier: 3"))
 
 ```
 
@@ -186,45 +176,7 @@ Questions:
 ```{r}
 #| echo: false
 
-tiers |>
-  dplyr::filter(tier %in% "Tier 4") |>
-  gt::gt(
-    rowname_col = "pick", 
-    groupname_col = "tier"
-  ) |>
-  gt::cols_merge(
-    columns = c(off_position, def_position), 
-    pattern = "{1}<br>{2}"
-  ) |>
-  gt::cols_merge(
-    columns = c(height, weight, age), 
-    pattern = "{1}<br>{2}<br>{3}"
-  ) |>
-  gt::tab_header(
-    title = "Mark's Big Board", 
-    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
-  ) |>
-  gt::cols_label(
-    name = "Prospect Name", 
-    off_position = "Position", 
-    height = "Measures", 
-    club = "Club Name"
-  ) |>
-  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
-  gt::tab_style(
-    style = gt::cell_text(size = gt::px(11)), 
-    locations = gt::cells_body(columns = c(height, off_position))
-  ) |>
-  gt::tab_options(
-    heading.background.color = "#050505", 
-    
-    column_labels.font.weight = "bold", 
-    
-    row_group.background.color = "#f6ee26", 
-    row_group.padding = gt::px(0), 
-    
-    source_notes.background.color = "#dbe2ea"
-  )
+render_tier(tiers, c("Tier: 4"))
 
 ```
 
@@ -240,45 +192,7 @@ Questions:
 ```{r}
 #| echo: false
 
-tiers |>
-  dplyr::filter(tier %in% "Tier 5") |>
-  gt::gt(
-    rowname_col = "pick", 
-    groupname_col = "tier"
-  ) |>
-  gt::cols_merge(
-    columns = c(off_position, def_position), 
-    pattern = "{1}<br>{2}"
-  ) |>
-  gt::cols_merge(
-    columns = c(height, weight, age), 
-    pattern = "{1}<br>{2}<br>{3}"
-  ) |>
-  gt::tab_header(
-    title = "Mark's Big Board", 
-    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
-  ) |>
-  gt::cols_label(
-    name = "Prospect Name", 
-    off_position = "Position", 
-    height = "Measures", 
-    club = "Club Name"
-  ) |>
-  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
-  gt::tab_style(
-    style = gt::cell_text(size = gt::px(11)), 
-    locations = gt::cells_body(columns = c(height, off_position))
-  ) |>
-  gt::tab_options(
-    heading.background.color = "#050505", 
-    
-    column_labels.font.weight = "bold", 
-    
-    row_group.background.color = "#f6ee26", 
-    row_group.padding = gt::px(0), 
-    
-    source_notes.background.color = "#dbe2ea"
-  )
+render_tier(tiers, c("Tier: 5"))
 
 ```
 
@@ -295,45 +209,7 @@ Questions:
 ```{r}
 #| echo: false
 
-tiers |>
-  dplyr::filter(tier %in% "Tier 6") |>
-  gt::gt(
-    rowname_col = "pick", 
-    groupname_col = "tier"
-  ) |>
-  gt::cols_merge(
-    columns = c(off_position, def_position), 
-    pattern = "{1}<br>{2}"
-  ) |>
-  gt::cols_merge(
-    columns = c(height, weight, age), 
-    pattern = "{1}<br>{2}<br>{3}"
-  ) |>
-  gt::tab_header(
-    title = "Mark's Big Board", 
-    subtitle = "2023 NBA Draft | As of Feb 28th, 2023"
-  ) |>
-  gt::cols_label(
-    name = "Prospect Name", 
-    off_position = "Position", 
-    height = "Measures", 
-    club = "Club Name"
-  ) |>
-  gt::tab_source_note(source_note = "Mark | Twitter: @MarkW_E01") |>
-  gt::tab_style(
-    style = gt::cell_text(size = gt::px(11)), 
-    locations = gt::cells_body(columns = c(height, off_position))
-  ) |>
-  gt::tab_options(
-    heading.background.color = "#050505", 
-    
-    column_labels.font.weight = "bold", 
-    
-    row_group.background.color = "#f6ee26", 
-    row_group.padding = gt::px(0), 
-    
-    source_notes.background.color = "#dbe2ea"
-  )
+render_tier(tiers, c("Tier: 6"))
 
 ```
 

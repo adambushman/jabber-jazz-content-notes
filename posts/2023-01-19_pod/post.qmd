@@ -1,8 +1,8 @@
 ---
-title: "Draft Preview #1 with Josh | Podcast"
-description: "Today we're joined by Josh Roberts to take our first look ahead to the 2023 NBA Draft. We review his big board and tackle some of the interesting wrinkles thus far."
+title: "Draft Preview #2 with Leif | Podcast"
+description: "Today we're joined by Leif Thulin to take our another look at the 2023 NBA Draft. We review his big board and hit some of the controversial topics around recent risers."
 author: "Adam Bushman"
-date: "2022-12-07"
+date: "2023-01-19"
 categories: [2023-24, draft, preview]
 image: "thumbnail.png"
 draft: false
@@ -13,7 +13,7 @@ draft: false
 #| warning: false
 #| error: false
 
-here::i_am('posts/2022-12-07_pod/post.qmd')
+here::i_am('posts/2023-01-19_pod/post.qmd')
 
 library('here')
 library('tidyverse')
@@ -30,13 +30,15 @@ Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
 
 Today:
 
-*   What's the 2023 NBA draft looking like for the Utah Jazz?
+*   Our second look ahead to the 2023 NBA draft
 
 Guest:
 
-*   Josh Roberts [@jayjazz3](https://twitter.com/jayjazz3)
-    -   Staple of Jazz Twitter
-    -   Big college basketball fan
+*   Leif Thulin [@LeifThulin](https://twitter.com/LeifThulin/)
+    -   Jazz broadcast assistant
+    -   Co-host of Locked On NBA Big Board
+    -   Producer at ESPN700
+
 
 Like what we're doing? Consider...
 
@@ -48,26 +50,22 @@ Like what we're doing? Consider...
 Let's Jabber Jazz!
 
 
-## What's the 2023 NBA draft looking like for the Utah Jazz?
+## Second 2023 NBA draft Look Ahead
 
-2023 draft is unique:
+Starter Questions:
 
-*   Generational talent
-*   Deep star player pool
-*   Wide group of potential contributors
-
-Speaking for myself, I always get started on draft stuff far too late. 
-
-Josh, however, is keeping a steady pulse so we're going to digest his 1st round big board.
+*   How do you describe your evaluation?
+*   What are the player archtypes or skills that "break ties" for you?
+*   What's the next fad you anticipate that defines player comps and skill set preferences?
 
 ```{r}
 #| echo: false
 
 
 # Guest variables
-name = "Josh"
-as_of_date = "December 1st, 2022"
-twitter_handle = "@jayjazz3"
+name = "Leif"
+as_of_date = "January 12th, 2023"
+twitter_handle = "@LeifThulin"
 
 
 # Transforming birthday to age
@@ -84,7 +82,7 @@ to_age <- function(birthdate) {
 tiers <- 
   readxl::read_xlsx(
     here("master_files/2023_draft_big_boards.xlsx"), 
-    sheet = 'Josh-Roberts'
+    sheet = 'Leif-Thulin'
   ) %>%
   dplyr::mutate(
     age = paste(unlist(purrr::map(birthdate, to_age)), "yrs")
@@ -135,88 +133,62 @@ render_tier <- function(board, selected_tiers) {
 
 ```
 
-### Tier 1
-
-Single prospect: Victor Wembanyama
-
-Generational talent, best player in the league potential
+### First 10
 
 Questions:
 
-*   Explain why Victor fits this potential for you?
+*   How do you tier the first few prospects? Wemby and everyone? Scoot on an island?
+*   Brandon Miller: what are the debates here?
+    -   YES: he's done this for long enough
+    -   YES: he was highly thought of
+    -   YES: others around him have flaws too
+*   GG Jackson: rising across big boards? Why and how far?
+*   Anthony Black is an electric play maker; what's the weakness and NBA comp?
+
 
 ```{r}
 #| echo: false
 
-render_tier(tiers, c("Tier #1 - Best Player in the League"))
+render_tier(tiers, c("First 10"))
 
 ```
 
 
-### Tier 2
+### Middle 10
 
 Questions:
 
-*   Instead of positions/needs, what styles are you looking for?
-*   Opportunity with Ausar? Usually 3-5 pick gap?
-*   Are you up on anyone moving up a tier?
-*   Are you down on anyone to where they could slip a tier?
-*   Anyone else you want to mention?
-*   Potential for Jazz to have 1 pick here
-    -   Assume pick 6-8: who are you going with?
+*   Nick Smith Jr. out of the top 10 is pretty unique; what's the deal?
+*   Jarace Walker...where is he defensively and athletically? Cam lite?
+*   Jazz likely to have a pick in 9 - 13 range; who are you shooting for?
+*   Baba Miller doesn't seem to be getting a lot of attention
+    -   Draymond Green offense, Tayshaun Prince defense
+*   Jett Howard vs Gradey Dick as a shooter?
 
 ```{r}
 #| echo: false
 
-render_tier(tiers, c("Tier #2 - All-NBA Potential"))
+render_tier(tiers, c("Middle 10"))
 
 ```
 
 
-### Tier 3
+### Last 10
 
 Questions:
 
-*   You're high on GG Jackson and he's impressing; realistically does he stay out of the top 10?
-*   What has you concerned on Keyonte George?
-*   Handful of bigs: Kilipowski, Ware, Lively: higher on any more than Kessler?
-*   Are you up on anyone moving up a tier?
-*   Are you down on anyone to where they could slip a tier?
-*   Anyone else you want to mention?
-*   Potential for Jazz to have 2 picks here
-    -   Who are you going with?
+*   Kyle Filipowski: pretty low on him, what's the gap? Is he just Frank Kaminsky 2.0?
+*   Rayan Rupert -> what makes him an intriguing player?
+*   Brice Sensabaugh is another guy not gettin much fanfare
+*   Jazz should have a pick in the bottom 5; who sticks out??
 
 ```{r}
 #| echo: false
 
-render_tier(tiers, c("Tier #3 - All-Star Potential"))
+render_tier(tiers, c("Last 10"))
 
 ```
 
-
-### Tier 4
-
-Questions:
-
-*   Is there reason to jump tiers?
-    -   Say give up your #19 and #26 picks and Gay's expiring for a bigger, long salary and #14 to get Gradey Dick
-    -   Worth it?
-*   Lots of small guards here: Sasser, Hunter, McCollum
-    -   Any reservations with size?
-*   Only 30; is tier #4 larger if you include 2nd round?
-*   Are you up on anyone moving up a tier?
-*   Are you down on anyone to where they could slip a tier?
-*   Anyone else you want to mention?
-*   Potential for Jazz to have 1 pick here
-    -   Assume pick 17-19: who are you going with?
-    -   Assume pick 25-30: who are you going with?
-
-```{r}
-#| echo: false
-
-render_tier(tiers, c("Tier #4 - Starter/Rotation Potential"))
-
-```
 
 ### This Season
 
