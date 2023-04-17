@@ -4,7 +4,7 @@ description: "The 2022-23 Utah Jazz season has come to an end and what a season 
 date: "2023-04-17"
 categories: [2023-24, season, draft]
 image: "thumbnail.jpg"
-draft: true
+draft: false
 ---
 
 ## Intro
@@ -41,9 +41,10 @@ Let's Jabber Jazz!
 *   Approach to grades
     -   Relative scale to expectations
     -   C is passing, as in met expectations
-    -   Just players who logged more than 100 minutes
         *   F is completely unmet expectations
         *   A is completely blowing away expectations
+    -   Just players who logged more than 100 minutes
+
 
 ## Team Grades
 
