@@ -4,7 +4,7 @@ description: "While many have kept a pulse on the draft all season in anticipati
 author: "Adam Bushman"
 date: "2023-05-26"
 categories: [2023-24, draft, overview]
-image: "thumbnail.png"
+image: "thumbnail.jpg"
 draft: false
 ---
 
