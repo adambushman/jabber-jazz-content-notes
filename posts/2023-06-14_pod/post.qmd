@@ -56,7 +56,7 @@ Cam Whitmore
 *   Fit
     -   Could operate at the 2 or 3, complimenting Lauri well
     -   Jazz need creation
-*   Odds
+*   Range
     -   Currently no industry board has him lower than 8
 
 Ausar Thompson
@@ -69,7 +69,7 @@ Ausar Thompson
     -   The athleticism and speed compliments our finishers
     -   The passing and defense are sore needs
     -   Maybe he develops into a lead G which would be monumental
-*   Odds
+*   Range
     -   Currently no industry board has him lower than 8
 
 Anthony Black
@@ -80,7 +80,7 @@ Anthony Black
 *   Fit
     -   Passing and defense is what we need; position size is great
     -   PnR with Kessler; hitting Markkanen on cuts
-*   Odds
+*   Range
     -   Industry boards mock him between 6 and 10
 
 Taylor Hendricks
@@ -90,8 +90,13 @@ Taylor Hendricks
     -   Enough athleticism to round out a nice frontcourt trio
 *   Fit
     -   Compliments Markkanen and Kessler except for self-creation
-*   Odds
+*   Range
     -   Industry boards mock him between 6 and 14
+    
+    
+How often can you get one of these at 9?
+
+*   In 500 out 500 simulations (100%)
 
 
 ## Draft Targets at 16
@@ -99,32 +104,60 @@ Taylor Hendricks
 Cason Wallace
 
 *   Like
+    -   Floor raising
+    -   Seems like the perfect guard to do all the complimentary stuff and give you a star game when needed
 *   Fit
-*   Odds
+    -   The lack of creation is troublesome but he's an elite complimentary piece
+    -   Scales with everyone on the roster and most anyone you'd like to bring in
+*   Range
+    -   Industry boards mock him between 8 and 17
 
 Jalen Hood-Schifino
 
 *   Like
+    -   The passing and defense
+    -   Ability to punish drop coverage
+    -   Excellent size at 6'4" w/o shoes and 6'10" wingspan
 *   Fit
-*   Odds
+    -   Again, looks to be a great complimentary piece to a strong core
+    -   Jazz have some midrange operators but none with as strong of passing
+*   Range
+    -   Industry boards mock him between 9 and 21
 
 Kobe Bufkin
 
 *   Like
+    -   Met both the eye and data test
+    -   Such a strong foundation in every skill
 *   Fit
-*   Odds
+    -   Another combo guard without true lead guard pedigree but scales with everyone on the roster
+*   Range
+    -   Industry boards mock him between 12 and 22
 
 Keyonte George
 
 *   Like
+    -   Great pedigree
+    -   Demonstrated elite abilities creating with the ball
 *   Fit
-*   Odds
+    -   Elite shot makers with size always have a spot in a lineup
+*   Range
+    -   Industry boards mock him between 10 and 22
 
 Bilal Coulibaly
 
 *   Like
+    -   So fluid, graceful, and coordinated
+    -   Excellent size and youth
 *   Fit
-*   Odds
+    -   Could be a draft steal given how many boxes he checks; not without risk, though
+*   Range
+    -   Industry boards mock him between 11 and 33
+    
+    
+How often can you get one of these at 16?
+
+*   In 500 out 500 simulations (100%)
 
 
 ## Draft Targets at 28
@@ -132,32 +165,49 @@ Bilal Coulibaly
 Dariq Whitehead
 
 *   Like
+    -   Really elite shooter
+    -   Awesome high school pedigree for self-creation and athleticism
 *   Fit
-*   Odds
+    -   A great floor and ceiling combo at a great position
+*   Range
+    -   Industry boards mock him between 16 and 35
 
 GG Jackson
 
 *   Like
+    -   Elite self-creator
+    -   Some of the best combo of youth, measureables, and athleticism
 *   Fit
-*   Odds
+    -   The ideal 3 to surround our guys, giving the biggest need: creation
+*   Range
+    -   Industry boards mock him between 16 and 33
 
 Maxwell Lewis
 
 *   Like
 *   Fit
-*   Odds
+*   Range
+    -   Industry boards mock him between 15 and 30
 
 Colby Jones
 
 *   Like
 *   Fit
-*   Odds
+*   Range
+    -   Industry boards mock him between 19 and 48
 
 Andre Jackson
 
 *   Like
 *   Fit
-*   Odds
+*   Range
+    -   Industry boards mock him between 31 and 49
+    
+    
+How often can you get one of these at 28?
+
+*   In 500 out 500 simulations (100%)
+
 
 
 ## How Likely
