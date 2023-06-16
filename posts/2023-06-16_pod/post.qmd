@@ -1,10 +1,10 @@
 ---
 title: "Draft Targets for Utah at 9, 16, and 28 | Podcast"
-description: "While many have kept a pulse on the draft all season in anticipation of Utah's three first round picks, some are just getting their feet wet. If that's you, this is just the crash course to get you up to speed."
+description: "The NBA draft is in just 8 days so we sit down to explain which draft targets most catch our fancy, as well as how we expect them to fit with Utah and how likely they are to be available."
 author: "Adam Bushman"
-date: "2023-06-14"
+date: "2023-06-16"
 categories: [2023-24, draft, overview]
-image: "thumbnail.jpg"
+image: "thumbnail.ppg"
 draft: false
 ---
 
@@ -34,7 +34,7 @@ Let's Jabber Jazz!
 
 ## Draft Targets at 9
 
-Jarace Walker
+#### Jarace Walker
 
 *   Like
     -   Passing
@@ -44,10 +44,10 @@ Jarace Walker
     -   Love the front court trio of Lauri, Jarace, Walker
     -   Elite defense immediately
     -   Run some PnR, operate at the nail, spot up in the corner
-*   Odds
-    -   Currently no industry board has him lower than 7
+*   Range
+    -   Industry boards mock him between 4 and 8
 
-Cam Whitmore
+#### Cam Whitmore
 
 *   Like
     -   Athleticism
@@ -57,9 +57,9 @@ Cam Whitmore
     -   Could operate at the 2 or 3, complimenting Lauri well
     -   Jazz need creation
 *   Range
-    -   Currently no industry board has him lower than 8
+    -   Industry boards mock him between 4 and 7
 
-Ausar Thompson
+#### Ausar Thompson
 
 *   Like
     -   Feel and instincts for the game
@@ -70,9 +70,9 @@ Ausar Thompson
     -   The passing and defense are sore needs
     -   Maybe he develops into a lead G which would be monumental
 *   Range
-    -   Currently no industry board has him lower than 8
+    -   Industry boards mock him between 6 and 8
 
-Anthony Black
+#### Anthony Black
 
 *   Like
     -   The defense
@@ -83,7 +83,7 @@ Anthony Black
 *   Range
     -   Industry boards mock him between 6 and 10
 
-Taylor Hendricks
+#### Taylor Hendricks
 
 *   Like
     -   The shot and rim protection combo is awesome
@@ -101,7 +101,7 @@ How often can you get one of these at 9?
 
 ## Draft Targets at 16
 
-Cason Wallace
+#### Cason Wallace
 
 *   Like
     -   Floor raising
@@ -112,7 +112,7 @@ Cason Wallace
 *   Range
     -   Industry boards mock him between 8 and 17
 
-Jalen Hood-Schifino
+#### Jalen Hood-Schifino
 
 *   Like
     -   The passing and defense
@@ -124,7 +124,7 @@ Jalen Hood-Schifino
 *   Range
     -   Industry boards mock him between 9 and 21
 
-Kobe Bufkin
+#### Kobe Bufkin
 
 *   Like
     -   Met both the eye and data test
@@ -134,7 +134,7 @@ Kobe Bufkin
 *   Range
     -   Industry boards mock him between 12 and 22
 
-Keyonte George
+#### Keyonte George
 
 *   Like
     -   Great pedigree
@@ -144,7 +144,7 @@ Keyonte George
 *   Range
     -   Industry boards mock him between 10 and 22
 
-Bilal Coulibaly
+#### Bilal Coulibaly
 
 *   Like
     -   So fluid, graceful, and coordinated
@@ -162,7 +162,7 @@ How often can you get one of these at 16?
 
 ## Draft Targets at 28
 
-Dariq Whitehead
+#### Dariq Whitehead
 
 *   Like
     -   Really elite shooter
@@ -172,7 +172,7 @@ Dariq Whitehead
 *   Range
     -   Industry boards mock him between 16 and 35
 
-GG Jackson
+#### GG Jackson
 
 *   Like
     -   Elite self-creator
@@ -182,24 +182,35 @@ GG Jackson
 *   Range
     -   Industry boards mock him between 16 and 33
 
-Maxwell Lewis
+#### Maxwell Lewis
 
 *   Like
+    -   Size and ease of movement
+    -   Nice looking shot and some creation potential
 *   Fit
+    -   Another 3 that would mesh nicely with Lauri
+    -   Brings some creation we need; potential with some defense
 *   Range
     -   Industry boards mock him between 15 and 30
 
-Colby Jones
+#### Colby Jones
 
 *   Like
+    -   Great floor raiser; does a bit of everything well
+    -   Passing, defense, shooting; very portable
 *   Fit
+    -   I think he could turn into a PG; handled the ball a lot in the halfcourt for Xavier
+    -   Meshes nicely with any G; kinda the model BOS went after
 *   Range
     -   Industry boards mock him between 19 and 48
 
-Andre Jackson
+#### Andre Jackson
 
 *   Like
+    -   Excellent defense and passing
+    -   Brings a winning mindset and impact
 *   Fit
+    -   Shooting isn't great but he's a great connector and we got some shooting talent already
 *   Range
     -   Industry boards mock him between 31 and 49
     
