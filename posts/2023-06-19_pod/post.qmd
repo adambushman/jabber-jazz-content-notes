@@ -1,0 +1,318 @@
+---
+title: "Final Draft Board | Podcast"
+description: "We've reviewed boards from all our guests but today we run through Adam's evaluation approach, board, and specific players of interest in each pick range for the Utah Jazz."
+author: "Adam Bushman"
+date: "2023-06-19"
+categories: [2023-24, draft, preview]
+image: "thumbnail.png"
+draft: true
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| error: false
+
+here::i_am('posts/2023-06-19_pod/post.qmd')
+
+library('here')
+library('tidyverse')
+library('gt')
+library('gtExtras')
+
+```
+
+
+## Intro
+
+Welcome to Jabber Jazz | Fan-driven, Ad-free content on Utah Jazz basketball
+
+Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
+
+Today:
+
+*   Run through final big board
+    -   Chat risers/fallers
+    -   Orient to industry expectation
+*   Execute final draft simulation
+
+
+Like what we're doing? Consider...
+
+*   Subscribing
+*   Following
+*   Leaving a review or comment
+*   Snagging some merch
+
+Let's Jabber Jazz!
+
+
+## Approach
+
+*   Measureables (height, weight, etc.)
+*   Positions (offense, defense)
+*   Impression of how they carry themselves
+*   Physical traits
+*   Offense, defense traits
+*   Comparisons to NBA forerunners 
+*   Disclaimer on order and tiers
+    -   No confidence short term (first half of rookie deal) any player is better/worse than another
+    -   Tiers demonstrate confidence in long term (4-6 years) that the avg player in T1 > T2
+    -   Order within the tier is based on personal preference
+
+```{r}
+#| warning: false
+#| echo: false
+
+# Getting composite rankings
+composite <- 
+  read.csv(
+    "https://raw.githubusercontent.com/adambushman/basketball-data/master/draft/2023_Industry_Boards.csv"
+  ) %>%
+  pivot_longer(
+    cols = -Rank, 
+    names_to = "Source", 
+    values_to = "Player"
+  ) %>% group_by(Player) %>% 
+  summarise(avg = mean(Rank), rng = paste(min(Rank), "-", max(Rank))) %>% 
+  ungroup() %>% arrange(avg)
+
+```
+
+```{r}
+#| echo: false
+
+
+# Guest variables
+name = "Adam Bushman"
+as_of_date = "June 19th, 2023"
+twitter_handle = "@adam_bushman"
+
+
+# Transforming birthday to age
+to_age <- function(birthdate) {
+  age = round(as.numeric((lubridate::as_date(Sys.Date()) - lubridate::as_date(birthdate)) / 365.25), 1)
+  
+  if(stringr::str_length(as.character(age)) == 2) {
+    age = paste(age, ".0", sep = "")
+  }
+  return(as.character(age))
+}
+
+# Transforming birthday to age
+tiers <- 
+  readxl::read_xlsx(
+    here("master_files/2023_draft_big_boards.xlsx"), 
+    sheet = 'Adam-Bushman-2'
+  ) %>%
+  dplyr::mutate(
+    age = paste(unlist(purrr::map(birthdate, to_age)), "yrs"), 
+    tier = paste("Tier:", tier)
+  ) %>% 
+  dplyr::inner_join(
+    composite,
+    by = c("name" = "Player")
+  ) %>%
+  dplyr::select(-birthdate, -avg)
+
+render_tier <- function(board, selected_tiers) {
+  board %>%
+    filter(tier %in% selected_tiers) %>%
+    gt(
+      rowname_col = "pick", 
+      groupname_col = "tier"
+    ) %>%
+    cols_merge(
+      columns = c(off_position, def_position), 
+      pattern = "{1}<br>{2}"
+    ) %>%
+    cols_merge(
+      columns = c(height, weight, age), 
+      pattern = "{1}<br>{2}<br>{3}"
+    ) %>%
+    tab_header(
+      title = glue::glue("{name}'s Big Board"), 
+      subtitle = glue::glue("2023 NBA Draft | As of {as_of_date}")
+    ) %>%
+    cols_label(
+      name = "Prospect Name", 
+      rng = "Range", 
+      off_position = "Position", 
+      height = "Measures", 
+      club = "Club Name"
+    ) %>%
+    cols_move(off_position, club) %>%
+    cols_move_to_start(rng) %>%
+    tab_source_note(source_note = glue::glue("{name} | Twitter: {twitter_handle}")) %>%
+    tab_style(
+      style = cell_text(size = px(11)), 
+      locations = cells_body(columns = c(height, off_position))
+    ) %>%
+    tab_options(
+      heading.background.color = "#050505", 
+      
+      column_labels.font.weight = "bold", 
+      
+      row_group.background.color = "#f6ee26", 
+      row_group.padding = px(0), 
+      
+      source_notes.background.color = "#dbe2ea"
+    )
+}
+
+```
+
+### Tier 1
+
+No changes
+
+```{r}
+#| echo: false
+
+render_tier(tiers, c("Tier: 1"))
+
+```
+
+
+### Tier 2
+
+No changes
+
+I like Brandon and Scoot virtually the same. My own personal blend of metrics rates them out as equal prospects. I cede to Miller based on the position nad height.
+
+
+```{r}
+#| echo: false
+
+render_tier(tiers, c("Tier: 2"))
+
+```
+
+
+
+### Tier 3
+
+One change is GG Jackson falls out of this tier.
+
+I'm perfectly content with one of these players at 9, though as is demonstrated with the order, Hendricks is probably my least favorite option. Ideally, Jazz can pick from 2-3 of the below.
+
+
+```{r}
+#| echo: false
+
+render_tier(tiers, c("Tier: 3"))
+
+```
+
+
+### Tier 4
+
+Jalen Hood-Schifino, 4 spots ahead of industry:
+
+*   I buy the defense
+*   Midrange capable like he is in the PnR can be a major weapon in the playoffs
+
+Dariq Whitehead, 11 spots ahead of industry: 
+
+*   There's a lot of self-creation masked at Duke
+*   Injuries hid a lot of his athleticism
+
+Maxwell Lewis, 9 spots ahead of industry:
+
+*   He's very fluid, deceptively quick first step
+*   Has a foundational skill set in everything
+*   His recruitment and path through Pepperdine was weird
+
+GG Jackson, 12 spots ahead of industry, 5 spots lower than previous:
+
+*   Rumors of poor interviews, workouts, etc.
+    -   Some appears valid, others appear as smoke screens
+*   I just buy the package and am willing to take the big swing
+*   Would absolutely take him at #16; at #28 I'd be pissed if Utah didn't grab him
+
+Leonard Miller, 4 spots ahead of industry, 8 spots ahead of previous:
+
+*   Watched more of the high school tape; demonstrated a lot of initiation, passing
+*   Effort and diversity of his game shown at Ignite was impressive
+
+Bilal Coulibaly, 7 spots behind industry
+
+*   Physical displays are impressive
+    -   Official measurements
+    -   Crazy fluid and confident
+    -   Thinner than anticipated
+*   More raw than most admit; closer to Rayan Rupert than like Maxwell Lewis or Leonard Miller skill-wise right now
+*   Don't think there's enough due hesitancy over that he's played with a prospective Hall of Famer in Wembanyama and likely won't with his new team
+
+Gradey Dick, 9 spots behind industry
+
+*   The lack of self-creation potential is unfortunate
+*   Handle, wiggle are missing
+*   Lack of defense is overrated
+
+Dereck Lively II, 10 spots behind industry
+
+*   I think there's a lot of forcing Lively to DAL, NOP
+*   Like Lively a ton but the C position isn't ideal to invest in
+    -   They hit more often than G/F and are generally less valuable
+*   Even in a redraft, given what we know about Kessler, he's only going around 10
+
+Nick Smith Jr., 8 spots behind industry
+
+*   Didn't like how he was always sped up
+*   I think his floater style in the midrange and wanting to be ball dominant is a tough way to live in the NBA
+
+
+```{r}
+#| echo: false
+
+render_tier(tiers, c("Tier: 4"))
+
+```
+
+### Tier 5
+
+Any variation from industry average is likely captured in the range
+
+
+```{r}
+#| echo: false
+
+render_tier(tiers, c("Tier: 5"))
+
+```
+
+### Tier 6
+
+Any variation from the industry is likely captured in the range
+
+
+```{r}
+#| echo: false
+
+render_tier(tiers, c("Tier: 6"))
+
+```
+
+
+
+### This Season
+
+Thoughts on this season?
+
+*   What are your thoughts on the Jazz this season?
+
+
+## Close
+
+Thanks for listening!
+
+Like what we're doing? Here's how you can support
+
+*   Subscribe
+    -   [Podcast](https://linktr.ee/jabberjazz)
+    -   [Twitter | @Jabber_Jazz](https://twitter.com/Jabber_Jazz)
+    -   [YouTube](https://www.youtube.com/jabberjazz)
+*   Leave a review
+*   Score some Jabber Jazz merch
+    -   [Store](https://jabber-jazz.myspreadshop.com/)
