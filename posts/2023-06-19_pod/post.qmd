@@ -1,6 +1,6 @@
 ---
-title: "Final Draft Board | Podcast"
-description: "We've reviewed boards from all our guests but today we run through Adam's evaluation approach, board, and specific players of interest in each pick range for the Utah Jazz."
+title: "Final Draft Board & Mock | Podcast"
+description: "As draft week is upon us, we run through a final draft board, discussing risers and fallers, while orienting ourselves to industry consensus rankings, and wrapping up with a final mock draft."
 author: "Adam Bushman"
 date: "2023-06-19"
 categories: [2023-24, draft, preview]
