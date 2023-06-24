@@ -5,7 +5,7 @@ author: "Adam Bushman"
 date: "2023-06-19"
 categories: [2023-24, draft, preview]
 image: "thumbnail.png"
-draft: true
+draft: false
 ---
 
 ```{r}
