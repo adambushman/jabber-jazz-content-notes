@@ -1,6 +1,6 @@
 ---
 title: "Breaking Down the Draft | Podcast"
-description: "The draft is in the rear view mirror and by all accounts the Jazz got exactly who they wanted. We review the draft, breaking down who the team selected and what context we're afforded now to better grade the results."
+description: "The draft is in the rear view mirror and by all accounts the Jazz got exactly who they wanted. We review the draft, breaking down who the team selected and what context we're afforded now to better grade the results. We finally look ahead to the fit of these prospects with the team."
 author: "Adam Bushman"
 date: "2023-06-26"
 categories: [2023-24, draft, review]
@@ -17,10 +17,10 @@ Adam Bushman [Twitter | @adam_bushman](https://www.twitter.com/adam_bushman)
 
 Today:
 
-*   Run through final big board
-    -   Chat risers/fallers
-    -   Orient to industry expectation
-*   Execute final draft simulation
+*   Breakdown of how the draft unfolded
+*   Who did the Jazz get?
+*   Grading the draft
+*   Looking ahead
 
 
 Like what we're doing? Consider...
@@ -33,19 +33,232 @@ Like what we're doing? Consider...
 Let's Jabber Jazz!
 
 
-## Approach
+## Breakdown of how the draft unfolded
 
-*   Measureables (height, weight, etc.)
-*   Positions (offense, defense)
-*   Impression of how they carry themselves
-*   Physical traits
-*   Offense, defense traits
-*   Comparisons to NBA forerunners 
-*   Disclaimer on order and tiers
-    -   No confidence short term (first half of rookie deal) any player is better/worse than another
-    -   Tiers demonstrate confidence in long term (4-6 years) that the avg player in T1 > T2
-    -   Order within the tier is based on personal preference
+#### Before #9
 
+*   Top 4 was chalk
+*   DET going Ausar at 5
+    -   Indicated a UTA tradeup was still possible
+*   ORL going Black at 6 and IND going Bilalat 7 gave an amazing impression
+    -   The WAS-IND switcheroo hurt UTA for Jarace
+*   Whitmore falling was heaven sent but Jazz opted for Hendricks
+
+#### Between #10 and #15
+
+*   DAL executed a trade back with OKC
+    -   OKC taking Wallace left Whitmore the only remaining tier 3 guy
+*   All chalk until TOR with Gradey
+*   ATL getting Bufkin was intriguing
+*   Whitmore falling again felt like a blessing, Jazz opted for George
+    -   Big indication something was seriously wrong with Whitmore
+
+#### Between #16 and #27
+
+*   Lots of variability
+    -   Jaquez Jr. went early to MIA
+    -   Podziemski early to GSW
+    -   Smith Jr. to CHA
+    -   Lewis, Miller, Jackson, Jones, Jackson Jr., Sensabaugh all on the board
+*   Disappointment
+    -   Whitmore went to HOU
+    -   Whitehead went to BKN
+*   Jazz went with Sensabaugh to the delight of Josh
+
+#### After #28
+
+*   Wild results
+    -   GG Jackson falls to #45, MEM
+        *   Hate the fit, destination
+        *   Amazing value
+    -   Colby Jones to #34, SAC
+    -   Leonard Miller to #33, MIN
+    -   Andre Jackson Jr. to #36, ORL
+    -   Maxwell Lewis to #40, LAL
+*   All feels like amazing, incredible value
+    -   Not everyone will hit but the value proposition is incredible
+
+
+## Who did the Jazz get?
+
+#### Taylor Hendricks
+
+-   Measureables
+    *   19.6 yr freshman from UCF
+    *   6'8" with +5" length (avg)
+    *   217 lbs at 23.5 BMI (avg)
+-   Positions
+    *   Offense: F/C
+    *   Defense: F
+-   Evaluations
+    *   Presence: 8
+    *   Impact: 9
+    *   Athleticism: 8
+    *   Agility: 6
+    *   Feel: 8
+    *   Shooting: 9
+    *   Finishing: 7
+    *   Self-creation: 6
+    *   Wiggle: 4
+    *   Handle: 5
+    *   Passing: 5
+    *   Movement: 7
+    *   On Ball: 7
+    *   Off Ball: 9
+    *   Rebounding: 9
+    *   Activity: 9
+    *   Awareness: 10
+-   Fit
+    *   Love the Lauri-Taylor-Walker trio
+        -   Can play all together
+        -   Can soak up all 4 mins, most 3, and most 5
+    *   Kelly likely gets pushed out long term but short term works great
+    *   Doubles down on athleticism, length
+-   Future
+    *   Things go right?
+        -   Jaren Jackson Jr. (star)
+    *   NBA version of himself right now?
+        -   Brook Lopez (contributing starter)
+    *   Things go wrong?
+        -   Chris Boucher (bench player)
+
+#### Keyonte George
+
+-   Measureables
+    *   19.6 yr freshman from Baylor
+    *   6'4" unconfirmed
+    *   185 lbs at 22.5 BMI (unconfirmed; below avg)
+-   Positions
+    *   Offense: G
+    *   Defense: G
+-   Evaluations
+    *   Presence: 7
+    *   Impact: 5
+    *   Athleticism: 7
+    *   Agility: 7
+    *   Feel: 8
+    *   Shooting: 10
+    *   Finishing: 8
+    *   Self-creation: 7
+    *   Wiggle: 9
+    *   Handle: 8
+    *   Passing: 7
+    *   Movement: 8
+    *   On Ball: 5
+    *   Off Ball: 6
+    *   Rebounding: 9
+    *   Activity: 8
+    *   Awareness: 6
+-   Fit
+    *   Will be one of the few players we have that can get any shot they want and have a chance to do it well
+    *   Enough balance in offense and defense to get you excited
+    *   UTA wants to turn him into a PG which is a clear need for the team
+-   Future
+    *   Things go right?
+        -   Bradley Beal or Devin Booker (superstar)
+    *   NBA version of himself right now?
+        -   Jordan Poole (suspect starter)
+    *   Things go wrong?
+        -   Ben McClemore (bench player)
+
+#### Brice Sensabaugh
+
+-   Measureables
+    *   19.6 yr freshman from Ohio State
+    *   6'6" (unconfirmed)
+    *   235 lbs at 27.2 BMI (unconfirmed; above avg)
+-   Positions
+    *   Offense: W
+    *   Defense: W
+-   Evaluations
+    *   Presence: 9
+    *   Impact: 7
+    *   Athleticism: 4
+    *   Agility: 7
+    *   Feel: 8
+    *   Shooting: 10
+    *   Finishing: 5
+    *   Self-creation: 8
+    *   Wiggle: 7
+    *   Handle: 6
+    *   Passing: 5
+    *   Movement: 7
+    *   On Ball: 4
+    *   Off Ball: 6
+    *   Rebounding: 9
+    *   Activity: 5
+    *   Awareness: 5
+-   Fit
+    *   Sensabaugh can score anywhere and in lots of ways
+        -   Makes him pretty scalable offensively as his career unfolds
+        -   We got a lot of guys who have his tendencies; can be good if done well, can be hurtful if done poorly
+    *   Defense is currently pretty suspect; limits portability across lineups
+-   Future
+    *   Things go right?
+        -   Late career DeMar DeRozan or Eric Gordon (valued starter)
+    *   NBA version of himself right now?
+        -   Cam Thomas (bench player)
+    *   Things go wrong?
+        -   Jared Butler (out of the league)
+
+
+## Grading the draft
+
+*   What did we need (IMO)
+    -   Shot at a #1 guy, 40% of need
+    -   Self-creation, 30%
+    -   Passing, 15% of need
+    -   Perimeter defense, 15% of need
+*   Hendricks at #9: "B"
+    -   The safe pick; shoots and plays defense
+    -   No creation, limited passing, conservative ceiling
+*   George at #16; "A-"
+    -   With Hendricks as #9, this is the right upside play
+        *   May have preferred Dariq but it's marginal
+    -   Has incredible balance in all these areas
+    -   Not without risk: turnover prone, streaky, defensive gambler
+*   Brice Sensabaugh at #28; "B+"
+    -   Incredible value play; often mocked in the top 20
+    -   Put together an awesome intersection of efficiency and difficulty
+    -   Body work to do, defensive improvement, injury risk
+*   Overall grade
+    -   B+
+    -   Addressed a lot of needs and have guys with clear paths to starter level production
+    -   Don't have a feel great prospect to turn into a star
+
+
+## Looking ahead
+
+*   Rookie seasons
+    -   [Riley Gisseman's analysis](https://twitter.com/rgiss11/status/1672291769403473923?s=20) of previous 9, 16, 28 picks
+        *   Best player is -0.3 DARKO, or serviceable role player w/ a bright future
+        *   Next best is -1.8 DARKO, borderline rotation
+        *   Worst is -3.8 DARKO, G-League
+    -   Minutes probably reflect a similar story
+        *   Taylor probably gets Ochai level minutes: ~1200
+            -   Doesn't see the G-League much if, at all, or starts until post-trade deadline, if at all
+        *   Keyonte probably gets ~1000 minutes
+            -   Spends time in the G-League but when with the team sees a steady, non-starting role
+        *   Sensabaugh probably gets Ochai's minutes before starting: ~700
+            -   Split half/half with G-League but when with Jazz they give him low-level backup minutes
+*   Beyond
+    -   [Riley Gisseman's analysis](https://twitter.com/rgiss11/status/1672292444367654914?s=20) of previous 9, 16, 28 picks at end of their rookie deal
+        *   Best player is +2.0 DARKO, or a high level starter
+        *   Next best is 0.0 DARKO, or 5th starter/6th man
+        *   Worst is out of the league
+    -   Spot checking history with 3 pick teams bears it out too
+        *   ATL in 2018 had 3 picks
+            -   Young #5, Huerter #19, Spellman #30
+            -   Exactly as outlined
+        *   LAL in 2015 had 3 picks
+            -   Russell #2, Nance Jr. #27, Brown #34
+    -   Jazz are still missing the star, the #1 option
+        *   Given the pick situation, always more likely to happen via trade than the draft
+        *   Lauri could take another leap (would bet against it, though)
+        *   Keyonte is the best hope currently of the youngins (not confident)
+    -   Jazz are also still missing a wing defender you want on the opposing guys
+        *   Lauri, Ochai, Taylor are the best bets; don't feel great about any of them
+        
 
 ## Close
 
