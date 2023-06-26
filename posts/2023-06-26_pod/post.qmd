@@ -4,7 +4,7 @@ description: "The draft is in the rear view mirror and by all accounts the Jazz 
 author: "Adam Bushman"
 date: "2023-06-26"
 categories: [2023-24, draft, review]
-image: "thumbnail.png"
+image: "thumbnail.jpg"
 draft: false
 ---
 
