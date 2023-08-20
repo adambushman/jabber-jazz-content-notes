@@ -4,7 +4,7 @@ description: "The NBA draft is in just 8 days so we sit down to explain which dr
 author: "Adam Bushman"
 date: "2023-06-16"
 categories: [2023-24, draft, overview]
-image: "thumbnail.ppg"
+image: "thumbnail.png"
 draft: false
 ---
 
